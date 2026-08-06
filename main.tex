@@ -1,0 +1,3408 @@
+% !LW recipe = pdflatex
+
+\documentclass[12pt,a4paper]{article}
+
+% Permite escrever caracteres acentuados.
+\usepackage[utf8]{inputenc}
+
+% Melhora a codificação das fontes no PDF.
+\usepackage[T1]{fontenc}
+
+% Regras de idioma do português europeu.
+\usepackage[portuguese]{babel}
+
+% Pacotes matemáticos.
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+% Configuração das margens.
+\usepackage{geometry}
+\geometry{
+    top=2.5cm,
+    bottom=2.5cm,
+    left=2.5cm,
+    right=2.5cm
+}
+
+% Símbolos das operações que serão construídas.
+\newcommand{\mov}{\mathbin{\#}}
+\newcommand{\rep}{\mathbin{@}}
+
+\title{Matemática como Movimento}
+\author{Timóteo Cruz}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Introdução}
+
+\subsection{A ideia fundamental}
+
+Começamos com o conjunto dos números naturais:
+
+\[
+    \mathbb{N}=\{1,2,3,4,5,\ldots\}.
+\]
+
+Os números naturais surgiram da necessidade de contar objetos do
+quotidiano. Para determinar quantos animais possuímos, por exemplo,
+podemos associar cada animal a um dedo, a uma pedra ou a uma marca.
+
+Essa é uma correspondência um a um: cada objeto contado recebe
+exatamente uma marca.
+
+Ao escrevermos os números naturais na ordem
+
+\[
+    1,2,3,4,5,\ldots,
+\]
+
+já reconhecemos uma primeira estrutura: depois de cada número aparece
+um número seguinte.
+
+Neste primeiro momento, porém, não assumiremos que conhecemos operações
+como a soma ou a multiplicação. Queremos observar como essas operações
+podem surgir a partir de perguntas simples.
+
+Como os números estão organizados numa sequência, podemos imaginar que
+nos movemos sobre eles.
+
+A nossa primeira pergunta será:
+
+\begin{center}
+    \emph{Como podemos descrever movimentos sobre os números naturais?}
+\end{center}
+
+Consideremos o trecho
+
+\[
+    A=\{1,2,3,4,5,6\}\subseteq\mathbb{N}.
+\]
+
+Imaginemos agora que partimos de uma origem ainda não nomeada e damos
+passos de comprimento \(2\).
+
+Depois do primeiro passo, alcançamos o número \(2\). Depois do segundo,
+alcançamos o número \(4\). Depois do terceiro, alcançamos o número \(6\).
+
+Podemos representar a composição desses três movimentos por
+
+\[
+    2\mov 2\mov 2=6.
+\]
+
+Aqui, cada ocorrência do número \(2\) representa um passo de comprimento
+\(2\). O primeiro \(2\) não representa a posição inicial: ele representa
+o primeiro movimento.
+
+O símbolo \(\mov\) será, portanto, a nossa primeira operação. Neste
+momento, ele representa a composição de dois movimentos.
+
+Mais tarde investigaremos quais propriedades essa operação possui.
+
+\subsection{Repetição de um mesmo passo}
+
+No movimento anterior aparece uma estrutura interessante:
+
+\begin{itemize}
+    \item o comprimento de cada passo é \(2\);
+    \item o mesmo passo aparece \(3\) vezes;
+    \item o ponto alcançado é \(6\).
+\end{itemize}
+
+A repetição do mesmo movimento sugere a criação de uma nova notação.
+
+Definimos
+
+\[
+    a\rep n
+    =
+    \underbrace{a\mov a\mov\cdots\mov a}_{n\text{ ocorrências de }a}.
+\]
+
+Assim, \(a\rep n\) significa repetir \(n\) vezes um movimento de
+comprimento \(a\).
+
+No nosso primeiro exemplo,
+
+\[
+    2\rep 3=2\mov 2\mov 2=6.
+\]
+
+Como também podemos representar o número \(3\) por
+
+\[
+    1\mov 1\mov 1=3,
+\]
+
+obtemos
+
+\[
+    2\rep(1\mov 1\mov 1)
+    =
+    2\rep 3
+    =
+    6.
+\]
+
+Outro exemplo seria
+
+\[
+    4\rep 3
+    =
+    4\mov 4\mov 4
+    =
+    12.
+\]
+
+Neste estágio, \(\rep\) é apenas uma operação de repetição. Ainda
+precisamos investigar as suas propriedades antes de identificá-la
+com aquilo que normalmente chamamos de multiplicação.
+
+\subsection{Duas maneiras pelas quais uma operação pode surgir}
+
+Podemos agora distinguir duas maneiras pelas quais uma operação pode
+aparecer.
+
+A operação \(\mov\) surgiu da necessidade de representar a composição
+de movimentos.
+
+A operação \(\rep\), por outro lado, surgiu quando reconhecemos uma
+repetição em expressões construídas com \(\mov\).
+
+Por exemplo, considere a expressão
+
+\[
+    2\mov 2\mov 2\mov 2\mov 2.
+\]
+
+Em vez de escrever cinco vezes o mesmo passo, podemos comprimir a
+expressão:
+
+\[
+    2\rep 5.
+\]
+
+Portanto, a operação \(\rep\) não aparece inicialmente como uma
+operação completamente independente. Ela surge como uma maneira de
+reconhecer, nomear e comprimir uma regularidade presente na repetição
+da operação \(\mov\).
+
+Somente depois de estudarmos as propriedades dessa nova operação
+poderemos reconhecer que ela corresponde à multiplicação usual dos
+números naturais.
+\subsection{Primeiras propriedades da operação \texorpdfstring{$\mov$}{#}}
+
+Até agora, observámos alguns movimentos particulares. Contudo, verificar
+uma propriedade em alguns exemplos não significa que ela seja verdadeira
+para todos os números naturais.
+
+Por exemplo, podemos calcular
+
+\[
+2\mov3=5
+\]
+
+e
+
+\[
+3\mov2=5,
+\]
+
+mas isso, por si só, não demonstra que
+
+\[
+a\mov b=b\mov a
+\]
+
+para quaisquer números naturais (a) e (b).
+
+Surge, portanto, uma nova necessidade:
+
+\begin{center}
+\emph{Como podemos provar uma afirmação para todos os números naturais?}
+\end{center}
+
+\subsubsection{O número seguinte e a definição precisa de movimento}
+
+Representaremos por (S(n)) o número natural que aparece imediatamente
+depois de (n). Assim,
+
+\[
+S(0)=1,\qquad S(1)=2,\qquad S(2)=3,
+\]
+
+e assim sucessivamente.
+
+Podemos agora tornar a operação $\mov$ mais precisa.
+
+Definimos:
+
+\[
+a\mov0=a
+\]
+
+e
+
+\[
+a\mov S(b)=S(a\mov b).
+\]
+
+A primeira igualdade diz que realizar zero movimentos a partir de (a)
+nos deixa em (a).
+
+A segunda diz que realizar (S(b)) movimentos significa realizar (b)
+movimentos e depois mais um movimento unitário.
+
+Por exemplo,
+
+\[
+\begin{aligned}
+2\mov3
+&=2\mov S(2)\
+&=S(2\mov2)\
+&=S(S(2\mov1))\
+&=S(S(S(2\mov0)))\
+&=S(S(S(2)))\
+&=5.
+\end{aligned}
+\]
+
+Dessa maneira, $a\mov b$ representa o ponto alcançado quando partimos
+de (a) e avançamos (b) passos unitários.
+
+\subsubsection{Uma nova ferramenta: a indução}
+
+Para provar que uma propriedade vale para todos os números naturais,
+podemos seguir dois passos:
+
+\begin{enumerate}
+\item provar que a propriedade vale para (0);
+\item provar que, sempre que ela vale para um número (n), também
+vale para o número seguinte (S(n)).
+\end{enumerate}
+
+Esse procedimento é chamado de \emph{indução matemática}.
+
+A ideia é semelhante a um movimento sobre os próprios números naturais.
+Começamos no (0) e mostramos que a verdade pode passar de cada número
+para o número seguinte.
+
+\subsubsection{A ordem dos movimentos importa?}
+
+Comparemos:
+
+\[
+2\mov3=5
+\]
+
+e
+
+\[
+3\mov2=5.
+\]
+
+Ambos os movimentos chegam ao mesmo número. Isso sugere que
+
+\[
+a\mov b=b\mov a.
+\]
+
+Essa propriedade é chamada de \emph{comutatividade}.
+
+Antes de demonstrá-la, precisamos de dois resultados auxiliares.
+
+\paragraph{Primeiro resultado.}
+
+Para qualquer número natural (a),
+
+\[
+0\mov a=a.
+\]
+
+\begin{proof}
+Faremos indução sobre (a).
+
+Para (a=0),
+
+\[
+0\mov0=0.
+\]
+
+Suponhamos agora que
+
+\[
+0\mov a=a.
+\]
+
+Então,
+
+\[
+\begin{aligned}
+0\mov S(a)
+&=S(0\mov a)\
+&=S(a).
+\end{aligned}
+\]
+
+Logo, a propriedade passa de (a) para (S(a)). Portanto,
+
+\[
+0\mov a=a
+\]
+
+para todo número natural (a).
+\end{proof}
+
+\paragraph{Segundo resultado.}
+
+Para quaisquer números naturais (a) e (b),
+
+\[
+S(a)\mov b=S(a\mov b).
+\]
+
+\begin{proof}
+Faremos indução sobre (b).
+
+Para (b=0),
+
+\[
+S(a)\mov0=S(a)=S(a\mov0).
+\]
+
+Suponhamos que
+
+\[
+S(a)\mov b=S(a\mov b).
+\]
+
+Então,
+
+\[
+\begin{aligned}
+S(a)\mov S(b)
+&=S\bigl(S(a)\mov b\bigr)\
+&=S\bigl(S(a\mov b)\bigr)\
+&=S\bigl(a\mov S(b)\bigr).
+\end{aligned}
+\]
+
+Portanto, o resultado vale para todo (b).
+\end{proof}
+
+Podemos agora demonstrar a comutatividade.
+
+\begin{proof}
+Fixemos um número natural (a) e façamos indução sobre (b).
+
+Para (b=0),
+
+\[
+a\mov0=a=0\mov a.
+\]
+
+Suponhamos que
+
+\[
+a\mov b=b\mov a.
+\]
+
+Então,
+
+\[
+\begin{aligned}
+a\mov S(b)
+&=S(a\mov b)\
+&=S(b\mov a)\
+&=S(b)\mov a.
+\end{aligned}
+\]
+
+Logo,
+
+\[
+a\mov b=b\mov a
+\]
+
+para todos os números naturais (a) e (b).
+\end{proof}
+
+A ordem dos movimentos, portanto, não altera o ponto final.
+
+Isso não significa que todas as operações sejam comutativas. Podemos,
+por exemplo, inventar uma operação $\triangleright$ definida por
+
+\[
+a\triangleright b=a.
+\]
+
+Essa operação simplesmente conserva o primeiro número. Assim,
+
+\[
+2\triangleright3=2,
+\]
+
+enquanto
+
+\[
+3\triangleright2=3.
+\]
+
+Logo, a ordem dos elementos pode alterar o resultado de uma operação.
+
+\subsubsection{A maneira de agrupar importa?}
+
+Comparemos:
+
+\[
+\begin{aligned}
+(2\mov3)\mov4
+&=5\mov4\
+&=9
+\end{aligned}
+\]
+
+e
+
+\[
+\begin{aligned}
+2\mov(3\mov4)
+&=2\mov7\
+&=9.
+\end{aligned}
+\]
+
+Isso sugere que
+
+\[
+(a\mov b)\mov c=a\mov(b\mov c).
+\]
+
+Essa propriedade é chamada de \emph{associatividade}.
+
+Ela afirma que, quando realizamos vários movimentos sucessivos, a
+maneira de colocar os parênteses não altera o destino.
+
+\begin{proof}
+Fixemos (a) e (b) e façamos indução sobre (c).
+
+Para (c=0),
+
+\[
+\begin{aligned}
+(a\mov b)\mov0
+&=a\mov b\
+&=a\mov(b\mov0).
+\end{aligned}
+\]
+
+Suponhamos que
+
+\[
+(a\mov b)\mov c=a\mov(b\mov c).
+\]
+
+Então,
+
+\[
+\begin{aligned}
+(a\mov b)\mov S(c)
+&=S\bigl((a\mov b)\mov c\bigr)\
+&=S\bigl(a\mov(b\mov c)\bigr)\
+&=a\mov S(b\mov c)\
+&=a\mov\bigl(b\mov S(c)\bigr).
+\end{aligned}
+\]
+
+Portanto,
+
+\[
+(a\mov b)\mov c=a\mov(b\mov c)
+\]
+
+para todos os números naturais (a), (b) e (c).
+\end{proof}
+
+A associatividade e a comutatividade são propriedades diferentes. Uma
+operação pode possuir uma delas sem possuir a outra.
+
+\paragraph{Uma operação associativa, mas não comutativa.}
+
+Consideremos novamente
+
+\[
+a\triangleright b=a.
+\]
+
+Temos
+
+\[
+\begin{aligned}
+(a\triangleright b)\triangleright c
+&=a\triangleright c\
+&=a
+\end{aligned}
+\]
+
+e
+
+\[
+\begin{aligned}
+a\triangleright(b\triangleright c)
+&=a\triangleright b\
+&=a.
+\end{aligned}
+\]
+
+Logo, $\triangleright$ é associativa.
+
+Entretanto,
+
+\[
+a\triangleright b=a
+\]
+
+e
+
+\[
+b\triangleright a=b,
+\]
+
+que geralmente são diferentes. Portanto, ela não é comutativa.
+
+\paragraph{Uma operação comutativa, mas não associativa.}
+
+Definamos $a\diamond b$ como a distância entre as posições (a) e
+(b) na sequência dos números naturais.
+
+A distância entre (a) e (b) é igual à distância entre (b) e (a).
+Portanto,
+
+\[
+a\diamond b=b\diamond a.
+\]
+
+Entretanto,
+
+\[
+\begin{aligned}
+(1\diamond2)\diamond3
+&=1\diamond3\
+&=2,
+\end{aligned}
+\]
+
+enquanto
+
+\[
+\begin{aligned}
+1\diamond(2\diamond3)
+&=1\diamond1\
+&=0.
+\end{aligned}
+\]
+
+Assim,
+
+\[
+(1\diamond2)\diamond3
+\neq
+1\diamond(2\diamond3).
+\]
+
+Logo, $\diamond$ é comutativa, mas não associativa.
+
+\subsubsection{Existe algum movimento que não altera nada?}
+
+Procuramos um elemento (e) tal que
+
+\[
+a\mov e=a
+\]
+
+para todo número natural (a).
+
+Pela própria definição da operação,
+
+\[
+a\mov0=a.
+\]
+
+Além disso, pela comutatividade,
+
+\[
+0\mov a=a.
+\]
+
+Portanto, o zero é o $\emph{elemento neutro}$ da operação $\mov$.
+
+Inicialmente, o zero apareceu como a ausência de movimento. Entretanto,
+ele não permanece apenas como uma ideia de ausência. Ele pode participar
+de operações, ser comparado com outros números e ocupar uma posição
+definida na estrutura que estamos a construir.
+
+Nesse sentido, a ausência de movimento passa a ser representada por um
+novo número.
+
+Como começámos com
+
+\[
+\mathbb{N}={1,2,3,\ldots},
+\]
+
+a descoberta do zero obriga-nos a ampliar o nosso conjunto:
+
+\[
+\mathbb{N}_0={0,1,2,3,\ldots}.
+\]
+
+A partir deste momento, trabalharemos em $\mathbb{N}_0$.
+
+\subsection{Primeiras propriedades da operação \texorpdfstring{$\rep$}{@}}
+
+Recordemos que
+
+\[
+a\rep n
+=
+\underbrace{a\mov a\mov\cdots\mov a}
+_{n\text{ ocorrências de }a}.
+\]
+
+Podemos também definir essa operação recursivamente:
+
+\[
+a\rep0=0
+\]
+
+e
+
+\[
+a\rep S(n)=(a\rep n)\mov a.
+\]
+
+A primeira igualdade diz que repetir um movimento zero vezes não produz
+movimento algum.
+
+A segunda diz que repetir (a) por (S(n)) vezes significa repetir
+(a) por (n) vezes e depois acrescentar mais uma ocorrência de (a).
+
+\subsubsection{Qual é o elemento neutro da repetição?}
+
+Como repetir (a) uma única vez produz o próprio (a),
+
+\[
+a\rep1=a.
+\]
+
+Também temos
+
+\[
+1\rep a
+=
+\underbrace{1\mov1\mov\cdots\mov1}
+_{a\text{ ocorrências de }1}
+=
+a.
+\]
+
+Portanto, o elemento neutro de $\rep$ é o número (1).
+
+O zero possui outro comportamento:
+
+\[
+a\rep0=0
+\]
+
+e
+
+\[
+0\rep a=0.
+\]
+
+Assim, o zero não é neutro para a repetição. Ele é um elemento
+\emph{absorvente}: quando participa de uma repetição, o resultado é
+zero.
+
+\subsubsection{A repetição é comutativa?}
+
+Comparemos:
+
+\[
+2\rep3=2\mov2\mov2=6
+\]
+
+e
+
+\[
+3\rep2=3\mov3=6.
+\]
+
+Isso sugere que
+
+\[
+a\rep b=b\rep a.
+\]
+
+Podemos imaginar $a\rep b$ como uma organização retangular formada
+por (b) grupos contendo (a) objetos em cada grupo.
+
+Se observarmos o mesmo retângulo na outra direção, veremos (a) grupos
+contendo (b) objetos em cada grupo.
+
+O número total de objetos não se altera. Essa observação conduz à
+comutatividade da repetição:
+
+\[
+a\rep b=b\rep a.
+\]
+
+Uma demonstração completamente formal também pode ser feita por
+indução.
+
+\subsubsection{A repetição é associativa?}
+
+Consideremos
+
+\[
+(a\rep b)\rep c.
+\]
+
+Primeiro, repetimos (a) por (b) vezes. Depois, repetimos todo esse
+bloco por (c) vezes.
+
+No total, temos (c) blocos, cada um contendo (b) ocorrências de
+(a). Isso equivale a repetir (a) por $b\rep c$ vezes.
+
+Portanto,
+
+\[
+(a\rep b)\rep c=a\rep(b\rep c).
+\]
+
+A operação $\rep$ também é associativa.
+
+\subsection{Distribuição de movimentos}
+
+Consideremos
+
+\[
+2\rep(3\mov4).
+\]
+
+Como
+
+\[
+3\mov4=7,
+\]
+
+essa expressão significa repetir o movimento de comprimento (2) por
+sete vezes:
+
+\[
+2\rep7
+=
+2\mov2\mov2\mov2\mov2\mov2\mov2.
+\]
+
+Podemos separar essas sete ocorrências em dois grupos: um grupo com três
+ocorrências e outro com quatro ocorrências:
+
+\[
+\begin{aligned}
+2\rep(3\mov4)
+&=
+(2\mov2\mov2)
+\mov
+(2\mov2\mov2\mov2)\
+&=
+(2\rep3)\mov(2\rep4).
+\end{aligned}
+\]
+
+Isso sugere a propriedade
+
+\[
+a\rep(b\mov c)
+=
+(a\rep b)\mov(a\rep c).
+\]
+
+Essa propriedade é chamada de \emph{distributividade de $\rep$ sobre
+$\mov$}.
+
+A razão pela qual podemos distribuir a repetição é que repetir (a)
+por $b\mov c$ vezes produz uma sequência de repetições que pode ser
+separada em duas partes:
+
+\[
+\underbrace{a\mov\cdots\mov a}
+_{b\text{ ocorrências}}
+\mov
+\underbrace{a\mov\cdots\mov a}
+_{c\text{ ocorrências}}.
+\]
+
+Também podemos começar com uma expressão como
+
+\[
+(3\mov4)\rep2.
+\]
+
+Agora estamos a repetir o movimento $3\mov4$ duas vezes:
+
+\[
+(3\mov4)\mov(3\mov4).
+\]
+
+Usando a associatividade e a comutatividade de $\mov$, podemos
+reorganizar os movimentos:
+
+\[
+\begin{aligned}
+(3\mov4)\mov(3\mov4)
+&=3\mov4\mov3\mov4\
+&=3\mov3\mov4\mov4\
+&=(3\rep2)\mov(4\rep2).
+\end{aligned}
+\]
+
+Assim, também temos
+
+\[
+(a\mov b)\rep c
+=
+(a\rep c)\mov(b\rep c).
+\]
+
+\subsubsection{A operação \texorpdfstring{$\mov$}{#} é distributiva
+sobre \texorpdfstring{$\rep$}{@}?}
+
+Para que $\mov$ fosse distributiva sobre $\rep$, precisaríamos ter
+
+\[
+a\mov(b\rep c)
+=
+(a\mov b)\rep(a\mov c)
+\]
+
+para quaisquer (a), (b) e (c).
+
+Tomemos (a=2), (b=3) e (c=4).
+
+O primeiro lado é
+
+\[
+\begin{aligned}
+2\mov(3\rep4)
+&=2\mov12\
+&=14.
+\end{aligned}
+\]
+
+O segundo lado é
+
+\[
+\begin{aligned}
+(2\mov3)\rep(2\mov4)
+&=5\rep6\
+&=30.
+\end{aligned}
+\]
+
+Como
+
+\[
+14\neq30,
+\]
+
+a operação $\mov$ não é distributiva sobre $\rep$.
+
+Temos, assim, uma situação assimétrica:
+
+\[
+\rep\text{ é distributiva sobre }\mov,
+\]
+
+mas
+
+\[
+\mov\text{ não é distributiva sobre }\rep.
+\]
+
+\subsection{Reconhecimento das operações}
+
+A operação $\mov$ foi definida como o avanço de um determinado número
+de passos unitários. Ela produz exatamente os mesmos resultados que a
+operação normalmente chamada de soma.
+
+A operação $\rep$ foi definida como a repetição de um mesmo movimento.
+Ela produz exatamente os mesmos resultados que a operação normalmente
+chamada de multiplicação.
+
+Portanto, podemos identificar
+
+\[
+a\mov b=a+b
+\]
+
+e
+
+\[
+a\rep b=a\cdot b.
+\]
+
+Não fazemos essa identificação apenas porque as operações possuem
+propriedades semelhantes. Fazemo-la porque as próprias definições
+produzem, para todos os números naturais, os mesmos resultados da soma
+e da multiplicação usuais.
+
+A partir deste ponto, usaremos as notações conhecidas (+) e
+$\cdot$. Mais adiante, voltaremos a procurar novas operações e novas
+formas de movimento sobre os números.
+
+\section{O surgimento das incógnitas}
+
+\subsection{Um movimento desconhecido}
+
+Consideremos a igualdade
+
+\[
+2+x=6.
+\]
+
+Aqui sabemos:
+
+\begin{itemize}
+\item o ponto de onde partimos;
+\item o ponto ao qual queremos chegar;
+\item mas não sabemos qual movimento deve ser realizado.
+\end{itemize}
+
+O símbolo (x) representa esse movimento desconhecido.
+
+Uma letra usada para representar uma quantidade cujo valor desejamos
+determinar é chamada de \emph{incógnita}.
+
+A pergunta que precisamos responder é:
+
+\begin{center}
+\emph{Qual movimento deve ser realizado para alcançar um destino
+previamente escolhido?}
+\end{center}
+
+Essa pergunta conduz ao conceito de equação.
+
+Uma \emph{equação} é uma igualdade que contém uma ou mais incógnitas. Uma
+solução da equação é um valor que, ao ser colocado no lugar da incógnita,
+torna a igualdade verdadeira.
+
+No nosso exemplo,
+
+\[
+2+x=6,
+\]
+
+o valor (x=4) é uma solução, pois
+
+\[
+2+4=6.
+\]
+
+O conjunto no qual procuramos as soluções também é importante. Uma mesma
+equação pode ter solução num conjunto numérico e não ter solução noutro.
+
+\subsection{Como resolver uma equação?}
+
+Na equação
+
+\[
+2+x=6,
+\]
+
+procuramos o movimento que, partindo de (2), nos leva até (6).
+
+Por inspeção dos números naturais, percebemos que esse movimento é (4).
+Entretanto, nem sempre será fácil encontrar uma solução experimentando
+número por número.
+
+Isso sugere a necessidade de uma nova operação.
+
+Queremos uma operação que responda à seguinte pergunta:
+
+\begin{center}
+\emph{Que movimento transforma o ponto inicial no ponto final?}
+\end{center}
+
+Introduziremos temporariamente o símbolo $(\ominus)$.
+
+Definimos
+
+\[
+a\ominus b=x
+\]
+
+quando
+
+\[
+b+x=a.
+\]
+
+Portanto, $a\ominus b$ representa o movimento que, partindo de (b),
+nos leva até (a).
+
+No exemplo anterior,
+
+\[
+x=6\ominus2,
+\]
+
+pois procuramos o movimento que, somado a (2), produz (6):
+
+\[
+2+(6\ominus2)=6.
+\]
+
+Assim,
+
+\[
+6\ominus2=4.
+\]
+
+Essa nova operação não é apenas uma forma diferente de soma. Ela resolve
+o problema inverso da soma.
+
+Na soma, conhecemos os movimentos e procuramos o destino:
+
+\[
+2+4=6.
+\]
+
+Na nova operação, conhecemos o ponto inicial e o destino, mas procuramos
+o movimento:
+
+\[
+6\ominus2=4.
+\]
+
+\subsection{Subtração e distância}
+
+É importante distinguir a nova operação da ideia de distância.
+
+A distância entre (2) e (6) é a mesma que a distância entre (6) e
+(2). Ela não depende da direção.
+
+Entretanto, os movimentos
+
+\[
+6\ominus2
+\]
+
+e
+
+\[
+2\ominus6
+\]
+
+não devem ser iguais.
+
+O primeiro representa o movimento que parte de (2) e chega a (6).
+Esse movimento aponta para a frente.
+
+O segundo representa o movimento que parte de (6) e chega a (2).
+Esse movimento aponta no sentido contrário.
+
+Portanto, a operação que estamos a construir deve guardar não apenas o
+comprimento do movimento, mas também a sua direção.
+
+\subsection{Uma equação impossível nos naturais}
+
+Consideremos agora a equação
+
+\[
+5+x=3.
+\]
+
+Nos números naturais, não existe um movimento para a frente que leve
+(5) até (3).
+
+Assim, a expressão
+
+\[
+3\ominus5
+\]
+
+não possui resultado em $(\mathbb{N}_0)$.
+
+Diante dessa dificuldade, temos pelo menos duas possibilidades:
+
+\begin{itemize}
+\item declarar que a equação não possui solução em
+$(\mathbb{N}_0)$;
+\item ampliar o nosso conjunto numérico, introduzindo movimentos no
+sentido contrário.
+\end{itemize}
+
+A primeira resposta não está errada. De facto, a equação
+
+\[
+5+x=3
+\]
+
+não possui solução em $(\mathbb{N}_0)$.
+
+Mas podemos perguntar:
+
+\begin{center}
+\emph{Seria possível criar números capazes de representar movimentos
+no sentido contrário?}
+\end{center}
+
+\subsection{Movimentos no sentido contrário}
+
+O símbolo
+
+\[
+-2
+\]
+
+pode ser interpretado como um movimento de duas unidades no sentido
+contrário ao movimento representado por (2).
+
+Assim,
+
+\[
+5+(-2)=3.
+\]
+
+O número (-2) é chamado de \emph{oposto} de (2), pois os dois
+movimentos anulam-se:
+
+\[
+2+(-2)=0.
+\]
+
+De maneira geral, para cada número natural (a), introduzimos um número
+(-a) que satisfaz
+
+\[
+a+(-a)=0.
+\]
+
+O número (-a) é chamado de \emph{inverso aditivo} ou \emph{oposto} de
+(a).
+
+Ao juntar os números naturais, o zero e os seus opostos, obtemos o
+conjunto dos números inteiros:
+
+\[
+\mathbb{Z}
+=
+{\ldots,-3,-2,-1,0,1,2,3,\ldots}.
+\]
+
+Na reta dos números inteiros, os números positivos representam
+movimentos num sentido e os números negativos representam movimentos
+no sentido contrário.
+
+Agora a equação
+
+\[
+5+x=3
+\]
+
+possui solução em $\mathbb{Z}$:
+
+\[
+x=-2.
+\]
+
+\subsection{O reconhecimento da subtração}
+
+A operação temporariamente representada por $(\ominus)$ é aquilo que
+normalmente chamamos de \emph{subtração}.
+
+Escrevemos
+
+\[
+a-b
+\]
+
+em vez de
+
+\[
+a\ominus b.
+\]
+
+A subtração pode ser definida usando a soma e o número oposto:
+
+\[
+a-b=a+(-b).
+\]
+
+Por exemplo,
+
+\[
+\begin{aligned}
+6-2
+&=6+(-2)\
+&=4,
+\end{aligned}
+\]
+
+enquanto
+
+\[
+\begin{aligned}
+2-6
+&=2+(-6)\
+&=-4.
+\end{aligned}
+\]
+
+A subtração não é uma operação comutativa, pois
+
+\[
+6-2\neq2-6.
+\]
+
+Isso responde a uma das perguntas deixadas anteriormente: existem
+operações nas quais a ordem dos elementos altera o resultado.
+
+\subsection{Os números negativos foram inventados ou descobertos?}
+
+Essa pergunta não possui uma única resposta definitiva.
+
+Os símbolos, as palavras e as regras usadas para representar os números
+negativos foram inventados pelos seres humanos.
+
+Entretanto, uma vez que desejamos resolver todas as equações da forma
+
+\[
+a+x=b,
+\]
+
+a necessidade de representar movimentos contrários surge naturalmente.
+As relações que esses novos números precisam satisfazer não podem ser
+escolhidas arbitrariamente.
+
+Podemos, portanto, dizer que a linguagem foi inventada, mas a estrutura
+e as suas consequências foram descobertas.
+
+\subsection{Outras equações impossíveis}
+
+A ampliação de $(\mathbb{N}_0)$ para $\mathbb{Z}$ não será a última.
+
+Considere a equação
+
+\[
+2x=1.
+\]
+
+Ela não possui solução em $\mathbb{Z}$. Para resolvê-la, precisamos
+introduzir números como
+
+\[
+\frac{1}{2}.
+\]
+
+Esses números conduzem ao conjunto dos números racionais:
+
+\[
+\mathbb{Q}.
+\]
+
+Considere agora
+
+\[
+x^2=2.
+\]
+
+Essa equação não possui solução em $\mathbb{Q}$. A sua solução positiva
+é
+
+\[
+x=\sqrt{2},
+\]
+
+que é um número irracional. Os números racionais e irracionais formam o
+conjunto dos números reais:
+
+\[
+\mathbb{R}.
+\]
+
+Por fim, a equação
+
+\[
+x^2=-1
+\]
+
+não possui solução em $\mathbb{R}$. A introdução de um número (i)
+satisfazendo
+
+\[
+i^2=-1
+\]
+
+conduz ao conjunto dos números complexos:
+
+\[
+\mathbb{C}.
+\]
+
+Obtemos, assim, uma sequência de ampliações:
+
+\[
+\mathbb{N}_0
+\subseteq
+\mathbb{Z}
+\subseteq
+\mathbb{Q}
+\subseteq
+\mathbb{R}
+\subseteq
+\mathbb{C}.
+\]
+
+Cada ampliação permite resolver problemas que não possuíam solução no
+conjunto anterior.
+
+\section{Uma quantidade que pode variar}
+
+\subsection{De incógnita a variável}
+
+Até agora, usámos letras para representar valores desconhecidos.
+
+Na equação
+
+\[
+2+x=6,
+\]
+
+a letra (x) representa um valor determinado que ainda não conhecemos.
+
+Podemos, porém, usar uma letra de outra maneira.
+
+Consideremos a regra
+
+\[
+y=x+2.
+\]
+
+Agora não estamos à procura de um único valor para (x). Permitimos que
+(x) assuma diferentes valores e observamos o valor de (y)
+correspondente.
+
+Se (x=1), então
+
+\[
+y=1+2=3.
+\]
+
+Se (x=2), então
+
+\[
+y=2+2=4.
+\]
+
+Se (x=3), então
+
+\[
+y=3+2=5.
+\]
+
+Obtemos as correspondências
+
+\[
+1\mapsto3,\qquad
+2\mapsto4,\qquad
+3\mapsto5.
+\]
+
+A letra (x) pode variar, enquanto (y) é determinado pelo valor
+escolhido para (x).
+
+Por isso, chamamos (x) de \emph{variável independente} e (y) de
+\emph{variável dependente}.
+
+\subsection{O surgimento da função}
+
+Uma \emph{função} é uma regra que associa a cada entrada permitida
+exatamente uma saída.
+
+Podemos chamar a regra anterior de (f) e escrever
+
+\[
+f(x)=x+2.
+\]
+
+Se desejamos permitir como entradas todos os números inteiros e obter
+saídas inteiras, escrevemos
+
+\[
+f\colon\mathbb{Z}\longrightarrow\mathbb{Z},
+\qquad
+f(x)=x+2.
+\]
+
+O primeiro conjunto, $\mathbb{Z}$, é o conjunto das entradas
+permitidas e é chamado de \emph{domínio}.
+
+O segundo conjunto, também $\mathbb{Z}$, é o conjunto no qual as
+saídas são procuradas e é chamado de $\emph{contradomínio}$.
+
+Temos, por exemplo,
+
+\[
+f(1)=3,\qquad
+f(2)=4,\qquad
+f(3)=5.
+\]
+
+A escrita
+
+\[
+y=f(x)
+\]
+
+significa que (y) é a saída determinada pela função quando a entrada
+é (x).
+
+\subsection{Uma função que já utilizámos}
+
+Quando introduzimos a indução matemática, usámos o símbolo (S(n)) para
+representar o sucessor de (n).
+
+Agora podemos reconhecer que (S) é uma função:
+
+\[
+S\colon\mathbb{N}_0\longrightarrow\mathbb{N}_0,
+\]
+
+definida por
+
+\[
+S(n)=n+1.
+\]
+
+Assim,
+
+\[
+S(0)=1,\qquad
+S(1)=2,\qquad
+S(2)=3.
+\]
+
+Já estávamos a usar uma função antes de termos dado um nome geral a esse
+tipo de objeto.
+
+\subsection{Diferença entre incógnita e variável}
+
+Na equação
+
+\[
+2+x=6,
+\]
+
+a letra (x) é uma incógnita. Procuramos um valor específico que
+satisfaça a equação.
+
+Na função
+
+\[
+f(x)=x+2,
+\]
+
+a letra (x) é uma variável. Ela pode percorrer os valores permitidos
+pelo domínio.
+
+A diferença não está na letra usada, mas no papel que a letra
+desempenha.
+
+A mesma letra pode ser incógnita num problema e variável noutro.
+
+Podemos responder às perguntas da seguinte maneira:
+
+\begin{itemize}
+\item Uma incógnita pode ser tratada como uma variável cujos valores
+possíveis estão a ser testados, mas ela representa um valor fixo que
+desejamos determinar.
+\item Nem toda variável é uma incógnita, pois uma variável pode
+percorrer livremente vários valores sem que desejemos descobrir um
+único valor para ela.
+\end{itemize}
+
+\section{Movimentos que crescem regularmente}
+
+\subsection{Uma regra de crescimento}
+
+Consideremos a função
+
+\[
+f(x)=2x.
+\]
+
+Vamos observar os valores produzidos quando (x) percorre os números
+
+\[
+1,2,3,4.
+\]
+
+Temos
+
+\[
+\begin{aligned}
+f(1)&=2\cdot1=2,\
+f(2)&=2\cdot2=4,\
+f(3)&=2\cdot3=6,\
+f(4)&=2\cdot4=8.
+\end{aligned}
+\]
+
+Obtemos a sequência
+
+\[
+2,4,6,8.
+\]
+
+Cada termo é obtido acrescentando duas unidades ao termo anterior:
+
+\[
+4-2=2,\qquad
+6-4=2,\qquad
+8-6=2.
+\]
+
+Dizemos que essa sequência possui uma \emph{diferença constante} igual
+a (2).
+
+Podemos representar o termo que ocupa a posição (n) por
+
+\[
+a_n=2n.
+\]
+
+Assim,
+
+\[
+a_1=2,\qquad
+a_2=4,\qquad
+a_3=6,\qquad
+a_4=8.
+\]
+
+Uma sequência pode, portanto, ser vista como uma função cujo domínio é
+formado pelos números naturais usados para indicar as posições.
+
+Neste caso,
+
+\[
+a\colon\mathbb{N}\longrightarrow\mathbb{N},
+\qquad
+a(n)=2n.
+\]
+
+\subsection{Somando os movimentos}
+
+Podemos agora somar os quatro primeiros valores da sequência:
+
+\[
+S_4=2+4+6+8.
+\]
+
+Usando a distributividade, obtemos
+
+\[
+\begin{aligned}
+S_4
+&=2\cdot1+2\cdot2+2\cdot3+2\cdot4\
+&=2(1+2+3+4)\
+&=2\cdot10\
+&=20.
+\end{aligned}
+\]
+
+A mesma ideia pode ser usada para os primeiros (n) números pares:
+
+\[
+S_n=2+4+6+\cdots+2n.
+\]
+
+Colocando o fator (2) em evidência,
+
+\[
+S_n=2(1+2+3+\cdots+n).
+\]
+
+
+Ou ainda usar a mesma idea para somar números ímpares, considere agora:
+
+\[
+1,
+\]
+
+\[
+1+3,
+\]
+
+\[
+1+3+5,
+\]
+
+\[
+1+3+5+7.
+\]
+
+Calculando:
+
+\[
+1=1,
+\]
+
+\[
+1+3=4,
+\]
+
+\[
+1+3+5=9,
+\]
+
+\[
+1+3+5+7=16.
+\]
+
+Obtemos:
+
+\[
+1,4,9,16,\ldots
+\]
+
+Esses números podem ser escritos como:
+
+\[
+1.1,\quad 2.2,\quad 3.3,\quad 4.4.
+\]
+
+Podemos introduzir uma nova notação:
+
+\[
+n^{\wedge 2}=n.n.
+\]
+
+Assim:
+
+\[
+n^{\wedge 2}=1+3+5+\cdots+(2n-1).
+\]
+
+Observe que a operação $n^{\wedge 2}$ é o mesmo que a de quadrado $n^2$. Fica a cargo do leitor fazer as demonstrações necessárias 
+assim como fizemos para o $\mov$ e o $\rep$ para então chamarmos de quadrado. Assumimos que você o fez e a partir de agora Vamos
+começar a usar a notação $n^2$ invés de $n^{\wedge 2}$.
+
+O quadrado aparece como o resultado acumulado de movimentos ímpares.
+
+\subsubsection{Por que os números ímpares formam quadrados?}
+
+Começamos com um ponto:
+
+\[
+1.
+\]
+
+Para transformar um quadrado de lado 1 em um quadrado de lado 2, acrescentamos três pontos.
+
+Para transformar um quadrado de lado 2 em um quadrado de lado 3, acrescentamos cinco pontos.
+
+Para transformar um quadrado de lado 3 em um quadrado de lado 4, acrescentamos sete pontos.
+
+Portanto:
+
+\[
+(n+1)^2=n^2+(2n+1).
+\]
+
+Perguntas:
+
+\begin{itemize}
+    \item Por que o incremento entre quadrados consecutivos é sempre ímpar?
+    \item Que formas surgem ao somar números pares?
+    \item Que formas surgem ao somar números triangulares?
+\end{itemize}
+
+Surge agora um novo problema:
+
+\begin{center}
+\emph{Como calcular a soma dos primeiros (n) números naturais sem
+somá-los um por um?}
+\end{center}
+
+\subsection{A soma dos primeiros números naturais}
+
+Definamos
+
+\[
+T_n=1+2+3+\cdots+(n-1)+n.
+\]
+
+Podemos escrever a mesma soma na ordem contrária:
+
+\[
+T_n=n+(n-1)+(n-2)+\cdots+2+1.
+\]
+
+Somando as duas expressões termo a termo, obtemos
+
+\[
+\begin{aligned}
+2T_n
+&=(1+n)+(2+n-1)+(3+n-2)+\cdots+(n+1).
+\end{aligned}
+\]
+
+Cada par possui o mesmo valor:
+
+\[
+n+1.
+\]
+
+Como existem (n) pares, temos
+
+\[
+2T_n=n(n+1).
+\]
+
+Portanto,
+
+\[
+T_n=\frac{n(n+1)}{2}.
+\]
+
+A divisão por (2) sempre produz um número natural, pois entre dois
+números consecutivos, (n) e (n+1), um deles é necessariamente par.
+
+Voltando à soma dos números pares,
+
+\[
+\begin{aligned}
+S_n
+&=2T_n\
+&=2\left(\frac{n(n+1)}{2}\right)\
+&=n(n+1).
+\end{aligned}
+\]
+
+Assim,
+
+\[
+2+4+6+\cdots+2n=n(n+1).
+\]
+
+Expandindo o produto,
+
+\[
+S_n=n^2+n.
+\]
+
+Começámos com uma sequência cujos termos crescem por movimentos
+constantes:
+
+\[
+2,4,6,8,\ldots
+\]
+
+Ao acumular esses termos, surgiu uma expressão contendo $(n^2)$:
+
+\[
+n^2+n.
+\]
+
+Essa é a nossa primeira aparição natural de uma expressão polinomial.
+
+\subsection{Do crescimento linear ao crescimento quadrático}
+
+Os termos da sequência original são dados por
+
+\[
+a_n=2n.
+\]
+
+Eles crescem linearmente: de um termo para o seguinte, acrescentamos
+sempre (2).
+
+Entretanto, a soma acumulada desses termos é
+
+\[
+S_n=n^2+n.
+\]
+
+Ela não cresce acrescentando sempre a mesma quantidade. As quantidades
+acrescentadas são justamente
+
+\[
+2,4,6,8,\ldots
+\]
+
+Temos
+
+\[
+S_{n+1}-S_n=2(n+1).
+\]
+
+Portanto, uma sequência de movimentos que cresce linearmente produz,
+quando acumulada, uma quantidade que cresce quadraticamente.
+
+Isso sugere novas perguntas:
+
+\begin{itemize}
+\item O que acontece quando somamos uma sequência com diferença
+constante diferente de (2)?
+\item Que tipo de expressão surge ao somarmos os quadrados
+$1^2,2^2,3^2,\ldots$?
+\item Se uma soma de termos lineares produz uma expressão
+quadrática, o que produzirá uma soma de termos quadráticos?
+\end{itemize}
+\section{Quando a variação também começa a variar}
+
+Consideremos novamente a função
+
+\[
+f(x)=2x.
+\]
+
+Quando \(x\) percorre os números
+
+\[
+1,2,3,4,
+\]
+
+obtemos
+
+\[
+\begin{aligned}
+f(1)&=2\cdot1=2,\\
+f(2)&=2\cdot2=4,\\
+f(3)&=2\cdot3=6,\\
+f(4)&=2\cdot4=8.
+\end{aligned}
+\]
+
+Assim, a função produz a sequência
+
+\[
+2,4,6,8.
+\]
+
+A diferença entre termos consecutivos é sempre a mesma:
+
+\[
+4-2=2,
+\]
+
+\[
+6-4=2,
+\]
+
+\[
+8-6=2.
+\]
+
+Portanto, essa sequência possui diferença constante.
+
+Consideremos agora as somas acumuladas dos seus termos:
+
+\[
+S_1=2,
+\]
+
+\[
+S_2=2+4=6,
+\]
+
+\[
+S_3=2+4+6=12,
+\]
+
+\[
+S_4=2+4+6+8=20.
+\]
+
+Obtemos uma nova sequência:
+
+\[
+2,6,12,20.
+\]
+
+Vamos calcular as diferenças entre os seus termos:
+
+\[
+6-2=4,
+\]
+
+\[
+12-6=6,
+\]
+
+\[
+20-12=8.
+\]
+
+As diferenças são agora
+
+\[
+4,6,8.
+\]
+
+Elas já não são constantes. Portanto, a sequência
+
+\[
+2,6,12,20,\ldots
+\]
+
+não cresce linearmente.
+
+Entretanto, as próprias diferenças formam uma nova sequência:
+
+\[
+4,6,8,\ldots
+\]
+
+E, ao calcularmos novamente as diferenças, encontramos
+
+\[
+6-4=2,
+\]
+
+\[
+8-6=2.
+\]
+
+A primeira diferença não é constante, mas a diferença das diferenças é
+constante.
+
+Podemos organizar esse processo da seguinte forma:
+
+\[
+\begin{array}{ccccccccc}
+2 && 6 && 12 && 20 && \cdots\\
+& 4 && 6 && 8 &&\\
+&& 2 && 2 &&
+\end{array}
+\]
+
+A sequência original \(2,4,6,8,\ldots\) possui diferença constante logo
+no primeiro nível.
+
+A sequência acumulada \(2,6,12,20,\ldots\) só apresenta uma diferença
+constante no segundo nível.
+
+Isso sugere uma nova maneira de distinguir diferentes tipos de
+crescimento:
+
+\begin{center}
+\emph{Quantas vezes precisamos calcular diferenças até obtermos uma
+quantidade constante?}
+\end{center}
+
+A regra que produz a sequência acumulada é, portanto,
+
+\[
+S_n=n^2+n.
+\]
+
+Nessa expressão aparecem dois tipos diferentes de quantidade:
+
+\[
+n^2
+\]
+
+e
+
+\[
+n.
+\]
+
+O termo \(n\) já havia aparecido nas regras de crescimento linear.
+Entretanto, o termo \(n^2\) representa uma nova ordem de crescimento.
+
+Ao acumularmos os valores de uma regra linear, surgiu uma expressão
+quadrática.
+
+Isso conduz a novas perguntas:
+
+\begin{itemize}
+    \item Por que a soma de termos lineares produziu uma expressão
+    quadrática?
+    \item O que significam separadamente os movimentos \(n^2\) e \(n\)?
+    \item Podemos somar movimentos de ordens diferentes?
+    \item O que acontece quando somamos termos quadráticos?
+    \item Surgirá então uma expressão contendo \(n^3\)?
+\end{itemize}
+\section{Podemos somar movimentos de ordens diferentes?}
+
+Ao somarmos os primeiros termos da sequência
+
+\[
+2,4,6,8,\ldots,
+\]
+
+obtivemos os valores acumulados
+
+\[
+2,6,12,20,\ldots
+\]
+
+O termo que ocupa a posição \(n\) nessa nova sequência é dado por
+
+\[
+S_n=n^2+n.
+\]
+
+Pela primeira vez, encontramos numa mesma regra dois tipos diferentes
+de movimento:
+
+\[
+n
+\]
+
+e
+
+\[
+n^2.
+\]
+
+O termo \(n\) representa um crescimento linear, enquanto \(n^2\)
+representa um crescimento quadrático.
+
+Isso sugere uma nova pergunta:
+
+\begin{center}
+\emph{Podemos construir regras somando movimentos de ordens diferentes?}
+\end{center}
+
+Por exemplo, podemos considerar a regra
+
+\[
+P(n)=n+n^2+n^3.
+\]
+
+Até agora, partíamos de uma sequência e procurávamos uma regra capaz de
+produzi-la. Faremos agora o caminho inverso: começaremos com uma regra e
+observaremos a sequência que ela produz.
+
+Calculando os seus primeiros valores, obtemos
+
+\[
+\begin{aligned}
+P(1)&=1+1^2+1^3=3,\\
+P(2)&=2+2^2+2^3=14,\\
+P(3)&=3+3^2+3^3=39,\\
+P(4)&=4+4^2+4^3=84,\\
+P(5)&=5+5^2+5^3=155,\\
+P(6)&=6+6^2+6^3=258.
+\end{aligned}
+\]
+
+Assim, a regra produz a sequência
+
+\[
+3,14,39,84,155,258,\ldots
+\]
+
+Vamos investigar como esses valores variam.
+
+As primeiras diferenças são
+
+\[
+14-3=11,
+\]
+
+\[
+39-14=25,
+\]
+
+\[
+84-39=45,
+\]
+
+\[
+155-84=71,
+\]
+
+\[
+258-155=103.
+\]
+
+Obtemos, portanto,
+
+\[
+11,25,45,71,103,\ldots
+\]
+
+Essas diferenças não são constantes. Calculamos então as diferenças
+novamente:
+
+\[
+25-11=14,
+\]
+
+\[
+45-25=20,
+\]
+
+\[
+71-45=26,
+\]
+
+\[
+103-71=32.
+\]
+
+Obtemos
+
+\[
+14,20,26,32,\ldots
+\]
+
+Essas diferenças também não são constantes. Calculando uma terceira
+vez:
+
+\[
+20-14=6,
+\]
+
+\[
+26-20=6,
+\]
+
+\[
+32-26=6.
+\]
+
+Finalmente, obtemos
+
+\[
+6,6,6,\ldots
+\]
+
+Podemos organizar o processo numa tabela de diferenças:
+
+\[
+\begin{array}{ccccccccccc}
+3 && 14 && 39 && 84 && 155 && 258\\
+& 11 && 25 && 45 && 71 && 103\\
+&& 14 && 20 && 26 && 32\\
+&&& 6 && 6 && 6
+\end{array}
+\]
+
+Foi necessário calcular diferenças três vezes até encontrarmos uma
+sequência constante.
+
+Isso parece estar relacionado com a maior potência presente na regra:
+
+\[
+P(n)=n+n^2+n^3.
+\]
+
+A maior potência é \(n^3\), e a constância apareceu na terceira
+diferença.
+
+Para uma regra linear, como
+
+\[
+P(n)=2n,
+\]
+
+a primeira diferença é constante.
+
+Para uma regra quadrática, como
+
+\[
+P(n)=n^2+n,
+\]
+
+a segunda diferença é constante.
+
+Para a regra
+
+\[
+P(n)=n+n^2+n^3,
+\]
+
+a terceira diferença é constante.
+
+Esses exemplos sugerem uma possível relação:
+
+\begin{center}
+\emph{O número de vezes que precisamos calcular diferenças até obter
+uma constante parece coincidir com o maior expoente presente na regra.}
+\end{center}
+
+Entretanto, alguns exemplos não constituem uma demonstração.
+
+Precisamos investigar:
+
+\begin{itemize}
+    \item Essa relação vale para toda soma de potências?
+    \item O que acontece se multiplicarmos cada potência por um número?
+    \item O que acontece se alguma potência estiver ausente?
+    \item O termo de maior expoente determina sozinho a ordem das
+    diferenças?
+    \item Por que calcular uma diferença parece reduzir a maior potência?
+\end{itemize}
+\subsubsection{O que acontece se multiplicarmos cada potência por um número?}
+
+Até agora, considerámos somas de movimentos como
+
+\[
+n+n^2+n^3.
+\]
+
+Entretanto, quando introduzimos a soma e a multiplicação, vimos que um
+mesmo movimento pode aparecer mais de uma vez.
+
+Por exemplo,
+
+\[
+3n
+\]
+
+pode ser interpretado como três ocorrências do movimento \(n\), enquanto
+
+\[
+4n^2
+\]
+
+representa quatro ocorrências do movimento \(n^2\).
+
+Parece, portanto, natural permitir que cada ordem de movimento apareça
+numa quantidade diferente. Podemos considerar, por exemplo,
+
+\[
+3+2n+4n^2+n^3.
+\]
+
+De maneira mais geral, podemos escrever
+
+\[
+a_1n+a_2n^2+a_3n^3,
+\]
+
+em que \(a_1,a_2,a_3\) são, inicialmente, números inteiros.
+
+Também podemos acrescentar um termo que não depende de \(n\):
+
+\[
+a_0+a_1n+a_2n^2+a_3n^3.
+\]
+
+O termo \(a_0\) representa um movimento constante. O termo \(a_1n\)
+representa um movimento de primeira ordem, \(a_2n^2\) representa um
+movimento de segunda ordem e \(a_3n^3\) representa um movimento de
+terceira ordem.
+
+Os números
+
+\[
+a_0,a_1,a_2,a_3
+\]
+
+indicam quanto de cada ordem de movimento participa da regra. Esses
+números serão chamados de \emph{coeficientes}.
+
+Uma expressão construída por uma soma finita de potências inteiras não
+negativas de uma variável, multiplicadas por coeficientes, será chamada
+de \emph{polinómio}.
+
+De maneira geral, escrevemos
+
+\[
+P(x)
+=
+a_0+a_1x+a_2x^2+\cdots+a_mx^m.
+\]
+
+O maior expoente que aparece com coeficiente diferente de zero será
+chamado de \emph{grau do polinómio}.
+
+\subsubsection{Quando o movimento total se anula?}
+
+Uma nova pergunta pode ser feita sobre essas regras:
+
+\begin{center}
+\emph{Para quais movimentos de entrada o movimento total produzido pelo
+polinómio é nulo?}
+\end{center}
+
+Consideremos o polinómio
+
+\[
+P(x)=x^2-5x+6.
+\]
+
+Procuramos valores de \(x\) para os quais
+
+\[
+P(x)=0.
+\]
+
+Experimentando alguns valores, encontramos
+
+\[
+P(2)=2^2-5\cdot2+6=0
+\]
+
+e
+
+\[
+P(3)=3^2-5\cdot3+6=0.
+\]
+
+Portanto, \(x=2\) e \(x=3\) anulam o movimento produzido pelo
+polinómio.
+
+Chamaremos de \emph{raiz} ou \emph{movimento nulo} de um polinómio todo
+valor da variável que torna o valor do polinómio igual a zero.
+
+Entretanto, encontrar as raízes apenas por experimentação pode tornar-se
+difícil. Precisamos investigar se a própria estrutura do polinómio
+guarda informações sobre os seus movimentos nulos.
+
+\subsubsection{Reconstruindo um polinómio a partir dos seus movimentos
+nulos}
+
+Sabemos que \(2\) e \(3\) anulam o polinómio
+
+\[
+x^2-5x+6.
+\]
+
+Vamos procurar uma maneira de construir uma expressão que se anule
+nesses dois valores.
+
+A expressão
+
+\[
+x-2
+\]
+
+anula-se quando \(x=2\), enquanto
+
+\[
+x-3
+\]
+
+anula-se quando \(x=3\).
+
+Se multiplicarmos essas duas expressões, obtemos
+
+\[
+(x-2)(x-3).
+\]
+
+Quando \(x=2\), o primeiro fator é zero e, portanto, todo o produto é
+zero.
+
+Quando \(x=3\), o segundo fator é zero e novamente todo o produto é
+zero.
+
+Expandindo o produto, encontramos
+
+\[
+\begin{aligned}
+(x-2)(x-3)
+&=x^2-3x-2x+6\\
+&=x^2-5x+6.
+\end{aligned}
+\]
+
+Assim,
+
+\[
+x^2-5x+6=(x-2)(x-3).
+\]
+
+O polinómio pode ser construído pelo produto das expressões associadas
+aos seus movimentos nulos.
+
+Vamos investigar um caso geral. Suponhamos que \(r\) e \(s\) sejam dois
+movimentos nulos. Então consideramos
+
+\[
+(x-r)(x-s).
+\]
+
+Expandindo,
+
+\[
+\begin{aligned}
+(x-r)(x-s)
+&=x^2-sx-rx+rs\\
+&=x^2-(r+s)x+rs.
+\end{aligned}
+\]
+
+Portanto, se
+
+\[
+x^2+bx+c=(x-r)(x-s),
+\]
+
+devemos ter
+
+\[
+r+s=-b
+\]
+
+e
+
+\[
+rs=c.
+\]
+
+No exemplo
+
+\[
+x^2-5x+6,
+\]
+
+temos
+
+\[
+r+s=5
+\]
+
+e
+
+\[
+rs=6.
+\]
+
+Os números \(2\) e \(3\) satisfazem essas duas condições:
+
+\[
+2+3=5
+\]
+
+e
+
+\[
+2\cdot3=6.
+\]
+
+Isso conduz às seguintes observações:
+
+\begin{itemize}
+    \item o termo sem \(x\) é o produto dos dois movimentos nulos;
+    \item o oposto do coeficiente de \(x\) é a soma dos dois movimentos
+    nulos;
+    \item o polinómio pode ser reconstruído pelo produto dos fatores
+    associados aos seus movimentos nulos.
+\end{itemize}
+
+\subsubsection{Um movimento nulo igual a zero}
+
+Consideremos agora
+
+\[
+x^2-5x.
+\]
+
+Colocando \(x\) em evidência, obtemos
+
+\[
+x^2-5x=x(x-5).
+\]
+
+Para que o produto seja zero, pelo menos um dos fatores precisa ser
+zero. Portanto,
+
+\[
+x=0
+\]
+
+ou
+
+\[
+x-5=0,
+\]
+
+o que fornece
+
+\[
+x=5.
+\]
+
+Assim, os movimentos nulos são
+
+\[
+0
+\qquad\text{e}\qquad
+5.
+\]
+
+O termo constante do polinómio é zero e, de facto,
+
+\[
+0\cdot5=0.
+\]
+
+Além disso,
+
+\[
+0+5=5,
+\]
+
+que é o oposto do coeficiente \(-5\) da parcela linear.
+
+Esses exemplos sugerem que os movimentos nulos estão diretamente
+relacionados com os fatores do polinómio.
+
+\subsubsection{Quantos movimentos nulos pode haver?}
+
+Nos exemplos anteriores, os polinómios possuíam grau \(2\) e encontrámos
+dois movimentos nulos.
+
+Isso sugere uma nova conjectura:
+
+\begin{center}
+\emph{O grau do polinómio parece limitar a quantidade de movimentos
+nulos que ele pode possuir.}
+\end{center}
+
+Entretanto, precisamos ser cuidadosos.
+
+O polinómio
+
+\[
+x^2+1
+\]
+
+não possui movimentos nulos reais, pois
+
+\[
+x^2+1>0
+\]
+
+para todo número real \(x\).
+
+Mais adiante, ao ampliarmos novamente o conjunto numérico, encontraremos
+movimentos nulos complexos para esse polinómio.
+
+Por enquanto, podemos apenas conjecturar que um polinómio de grau \(m\)
+não pode possuir mais do que \(m\) movimentos nulos diferentes.
+
+Também precisaremos considerar o caso em que um mesmo movimento nulo
+aparece repetidamente.
+
+\section{Movimentos que coincidem}
+
+Nos exemplos anteriores, encontrámos dois movimentos nulos diferentes.
+Vamos agora investigar o que acontece quando dois movimentos nulos
+coincidem.
+
+Suponhamos que o único movimento nulo seja \(x=a\), mas que o fator
+associado a ele apareça duas vezes.
+
+Nesse caso, temos
+
+\[
+(x-a)(x-a)=(x-a)^2.
+\]
+
+Expandindo,
+
+\[
+\begin{aligned}
+(x-a)^2
+&=x^2-ax-ax+a^2\\
+&=x^2-2ax+a^2.
+\end{aligned}
+\]
+
+A raiz \(a\) participa duas vezes da construção do polinómio.
+
+Podemos dizer que \(a\) é uma raiz de multiplicidade \(2\).
+
+Se o mesmo fator aparecer três vezes, teremos
+
+\[
+(x-a)^3=(x-a)(x-a)(x-a).
+\]
+
+Expandindo,
+
+\[
+\begin{aligned}
+(x-a)^3
+&=(x^2-2ax+a^2)(x-a)\\
+&=x^3-ax^2-2ax^2+2a^2x+a^2x-a^3\\
+&=x^3-3ax^2+3a^2x-a^3.
+\end{aligned}
+\]
+
+Agora a raiz \(a\) aparece três vezes e possui multiplicidade \(3\).
+
+Para quatro ocorrências, temos
+
+\[
+(x-a)^4=(x-a)(x-a)(x-a)(x-a).
+\]
+
+Podemos escrever
+
+\[
+(x-a)^4=(x-a)^2(x-a)^2.
+\]
+
+Assim,
+
+\[
+\begin{aligned}
+(x-a)^4
+&=(x^2-2ax+a^2)(x^2-2ax+a^2)\\
+&=x^4-4ax^3+6a^2x^2-4a^3x+a^4.
+\end{aligned}
+\]
+
+De maneira geral,
+
+\[
+\underbrace{(x-a)(x-a)\cdots(x-a)}
+_{n\text{ fatores}}
+=
+(x-a)^n.
+\]
+
+O expoente \(n\) indica quantas vezes o mesmo movimento nulo participa
+da construção do polinómio.
+
+\subsection{Os coeficientes das potências repetidas}
+
+Observemos os coeficientes das expansões anteriores, ignorando
+momentaneamente os sinais e as potências:
+
+\[
+\begin{array}{ccccccccc}
+&&&&1\\[4pt]
+&&&1&&1\\[4pt]
+&&1&&2&&1\\[4pt]
+&1&&3&&3&&1\\[4pt]
+1&&4&&6&&4&&1
+\end{array}
+\]
+
+Os coeficientes parecem possuir uma organização simétrica.
+
+Na expansão de \((x-a)^4\), por exemplo, encontramos
+
+\[
+1,4,6,4,1.
+\]
+
+Isso conduz a uma nova pergunta:
+
+\begin{center}
+\emph{Como podemos prever os coeficientes de \((x-a)^n\) sem realizar
+todas as multiplicações?}
+\end{center}
+
+\subsection{De quantas maneiras uma parcela pode surgir?}
+
+Para compreender de onde vêm os coeficientes, consideremos
+temporariamente
+
+\[
+(x+a)^4
+\]
+
+em vez de
+
+\[
+(x-a)^4.
+\]
+
+Dessa maneira, podemos investigar primeiro a quantidade de parcelas sem
+nos preocuparmos com a alternância dos sinais.
+
+Temos
+
+\[
+(x+a)^4=(x+a)(x+a)(x+a)(x+a).
+\]
+
+Para formar uma parcela da expansão, precisamos escolher um elemento de
+cada fator.
+
+Em cada fator existem duas possibilidades:
+
+\[
+x
+\qquad\text{ou}\qquad
+a.
+\]
+
+Se escolhermos \(x\) nos quatro fatores, obtemos
+
+\[
+x\cdot x\cdot x\cdot x=x^4.
+\]
+
+Essa parcela só pode surgir de uma maneira, pois precisamos escolher
+\(x\) em todos os fatores.
+
+Se escolhermos \(a\) uma vez e \(x\) nos outros três fatores, obtemos
+uma parcela da forma
+
+\[
+ax^3.
+\]
+
+Entretanto, podemos escolher o elemento \(a\) em qualquer um dos quatro
+fatores:
+
+\[
+\begin{array}{cccc}
+a & x & x & x,\\
+x & a & x & x,\\
+x & x & a & x,\\
+x & x & x & a.
+\end{array}
+\]
+
+Cada uma dessas escolhas produz a mesma parcela \(ax^3\).
+
+Como existem quatro maneiras, encontramos
+
+\[
+4ax^3.
+\]
+
+Para obter uma parcela da forma
+
+\[
+a^2x^2,
+\]
+
+precisamos escolher \(a\) em dois fatores e \(x\) nos outros dois.
+
+As possibilidades são
+
+\[
+\begin{array}{cccc}
+a & a & x & x,\\
+a & x & a & x,\\
+a & x & x & a,\\
+x & a & a & x,\\
+x & a & x & a,\\
+x & x & a & a.
+\end{array}
+\]
+
+Existem seis maneiras de produzir a parcela \(a^2x^2\). Por isso,
+encontramos
+
+\[
+6a^2x^2.
+\]
+
+Para obter uma parcela da forma
+
+\[
+a^3x,
+\]
+
+precisamos escolher \(x\) uma vez e \(a\) nos outros três fatores.
+
+A posição do \(x\) pode ser escolhida de quatro maneiras. Portanto,
+obtemos
+
+\[
+4a^3x.
+\]
+
+Finalmente, escolhendo \(a\) nos quatro fatores, obtemos
+
+\[
+a^4.
+\]
+
+Essa parcela só pode surgir de uma maneira.
+
+Reunindo todas as parcelas, encontramos
+
+\[
+(x+a)^4
+=
+x^4+4ax^3+6a^2x^2+4a^3x+a^4.
+\]
+
+Os coeficientes contam quantas escolhas diferentes produzem a mesma
+parcela.
+
+\subsection{Um novo problema de contagem}
+
+No caso anterior, precisámos contar quantas maneiras existem de escolher
+duas posições para o elemento \(a\) entre quatro posições disponíveis.
+
+Surge, então, um problema mais geral:
+
+\begin{center}
+\emph{De quantas maneiras podemos escolher \(p\) posições entre \(n\)
+posições disponíveis?}
+\end{center}
+
+Chamaremos essa quantidade de
+
+\[
+C(n,p).
+\]
+
+Assim,
+
+\[
+C(4,2)=6,
+\]
+
+pois existem seis maneiras de escolher duas posições entre quatro.
+
+Também temos
+
+\[
+C(4,1)=4
+\]
+
+e
+
+\[
+C(4,3)=4.
+\]
+
+Existem ainda dois casos imediatos.
+
+Há somente uma maneira de não escolher posição alguma:
+
+\[
+C(n,0)=1.
+\]
+
+Também há somente uma maneira de escolher todas as posições:
+
+\[
+C(n,n)=1.
+\]
+
+\subsection{Construindo uma contagem a partir de outra}
+
+Vamos investigar como calcular \(C(n,p)\) usando contagens menores.
+
+Considere novamente a escolha de \(p\) posições entre \(n\) posições.
+Observemos apenas a última posição.
+
+Há duas possibilidades.
+
+Na primeira, não escolhemos a última posição. Nesse caso, ainda
+precisamos escolher \(p\) posições entre as \(n-1\) posições anteriores.
+
+A quantidade de possibilidades é
+
+\[
+C(n-1,p).
+\]
+
+Na segunda possibilidade, escolhemos a última posição. Como uma posição
+já foi escolhida, precisamos escolher apenas mais \(p-1\) posições entre
+as \(n-1\) anteriores.
+
+A quantidade de possibilidades é
+
+\[
+C(n-1,p-1).
+\]
+
+Como os dois casos são diferentes e juntos contêm todas as
+possibilidades, temos
+
+\[
+C(n,p)=C(n-1,p)+C(n-1,p-1).
+\]
+
+Por exemplo,
+
+\[
+C(4,2)=C(3,2)+C(3,1).
+\]
+
+Como
+
+\[
+C(3,2)=3
+\]
+
+e
+
+\[
+C(3,1)=3,
+\]
+
+obtemos
+
+\[
+C(4,2)=3+3=6.
+\]
+
+\subsection{O triângulo das escolhas}
+
+Usando
+
+\[
+C(n,0)=C(n,n)=1
+\]
+
+e a relação
+
+\[
+C(n,p)=C(n-1,p)+C(n-1,p-1),
+\]
+
+podemos construir sucessivamente as linhas
+
+\[
+\begin{array}{ccccccccccc}
+ & & & & &1& & & & & \\[4pt]
+ & & & &1& &1& & & & \\[4pt]
+ & & &1& &2& &1& & & \\[4pt]
+ & &1& &3& &3& &1& & \\[4pt]
+ &1& &4& &6& &4& &1& \\[4pt]
+1& &5& &10& &10& &5& &1
+\end{array}
+\]
+
+Cada número interno é obtido pela soma dos dois números que aparecem
+imediatamente acima dele.
+
+Essa organização é tradicionalmente chamada de \emph{triângulo de
+Pascal}.
+
+As suas linhas fornecem exatamente os coeficientes das expansões de
+
+\[
+(x+a)^n.
+\]
+
+\subsection{Uma notação para contar escolhas}
+
+A quantidade \(C(n,p)\) é tradicionalmente representada por
+
+\[
+\binom{n}{p}.
+\]
+
+Lemos essa expressão como ``\(n\) escolhe \(p\)''.
+
+Assim,
+
+\[
+C(n,p)=\binom{n}{p}.
+\]
+
+A relação encontrada anteriormente torna-se
+
+\[
+\binom{n}{p}
+=
+\binom{n-1}{p}
++
+\binom{n-1}{p-1}.
+\]
+
+Também temos
+
+\[
+\binom{n}{0}=1
+\]
+
+e
+
+\[
+\binom{n}{n}=1.
+\]
+
+Essa notação não representa uma divisão. Ela representa o número de
+maneiras de escolher \(p\) posições entre \(n\) posições disponíveis.
+
+\subsection{Uma fórmula direta para as escolhas}
+
+O triângulo permite calcular uma linha usando a linha anterior.
+Entretanto, podemos perguntar:
+
+\begin{center}
+\emph{É possível calcular diretamente o número de escolhas sem construir
+todas as linhas anteriores?}
+\end{center}
+
+Suponhamos que desejamos escolher \(p\) posições entre \(n\) posições.
+
+Se a ordem das escolhas fosse importante, teríamos \(n\) possibilidades
+para a primeira posição.
+
+Depois de escolhermos a primeira, restariam \(n-1\) possibilidades para
+a segunda.
+
+Depois, restariam \(n-2\) possibilidades para a terceira, e assim
+sucessivamente.
+
+Para escolher \(p\) posições em ordem, teríamos
+
+\[
+n(n-1)(n-2)\cdots(n-p+1)
+\]
+
+possibilidades.
+
+Entretanto, quando escolhemos posições para formar uma parcela, a ordem
+das escolhas não importa.
+
+Escolher primeiro a posição \(1\) e depois a posição \(3\) produz o
+mesmo conjunto de posições que escolher primeiro a posição \(3\) e
+depois a posição \(1\).
+
+Precisamos, portanto, descobrir quantas vezes cada conjunto de \(p\)
+posições foi contado.
+
+As mesmas \(p\) posições podem ser ordenadas de
+
+\[
+p(p-1)(p-2)\cdots2\cdot1
+\]
+
+maneiras.
+
+Consequentemente,
+
+\[
+\binom{n}{p}
+=
+\frac{
+n(n-1)(n-2)\cdots(n-p+1)
+}{
+p(p-1)(p-2)\cdots2\cdot1
+}.
+\]
+
+Por exemplo,
+
+\[
+\binom{4}{2}
+=
+\frac{4\cdot3}{2\cdot1}
+=
+6.
+\]
+
+\subsection{Uma nova operação de compressão}
+
+Produtos decrescentes como
+
+\[
+n(n-1)(n-2)\cdots2\cdot1
+\]
+
+aparecem repetidamente.
+
+Para simplificar a escrita, definimos
+
+\[
+n!
+=
+n(n-1)(n-2)\cdots2\cdot1.
+\]
+
+Essa operação é chamada de \emph{fatorial}.
+
+Por exemplo,
+
+\[
+4!=4\cdot3\cdot2\cdot1=24
+\]
+
+e
+
+\[
+3!=3\cdot2\cdot1=6.
+\]
+
+Também definimos
+
+\[
+0!=1.
+\]
+
+Podemos interpretar \(0!\) como um produto sem fatores. O valor \(1\)
+permite conservar as propriedades das fórmulas que envolvem fatoriais.
+
+Usando a nova notação, temos
+
+\[
+n(n-1)\cdots(n-p+1)
+=
+\frac{n!}{(n-p)!}.
+\]
+
+Portanto,
+
+\[
+\binom{n}{p}
+=
+\frac{n!}{p!(n-p)!}.
+\]
+
+A fórmula com fatoriais não cria o número de escolhas. Ela apenas
+comprime a contagem que construímos anteriormente.
+
+\section{O binómio de Newton}
+
+Consideremos novamente
+
+\[
+(x+a)^n.
+\]
+
+Para obter uma parcela da forma
+
+\[
+x^{n-p}a^p,
+\]
+
+precisamos escolher \(a\) em exatamente \(p\) dos \(n\) fatores.
+
+Nos \(n-p\) fatores restantes, escolhemos \(x\).
+
+O número de maneiras de escolher as \(p\) posições ocupadas por \(a\) é
+
+\[
+\binom{n}{p}.
+\]
+
+Portanto, a parcela
+
+\[
+x^{n-p}a^p
+\]
+
+aparece
+
+\[
+\binom{n}{p}
+\]
+
+vezes na expansão.
+
+Reunindo todas as possibilidades, obtemos
+
+\[
+\begin{aligned}
+(x+a)^n
+={}&
+\binom{n}{0}x^n
++
+\binom{n}{1}x^{n-1}a
++
+\binom{n}{2}x^{n-2}a^2\\
+&+\cdots+
+\binom{n}{n-1}xa^{n-1}
++
+\binom{n}{n}a^n.
+\end{aligned}
+\]
+
+Usando o símbolo de soma para comprimir a expressão, podemos escrever
+
+\[
+(x+a)^n
+=
+\sum_{p=0}^{n}
+\binom{n}{p}
+x^{n-p}a^p.
+\]
+
+Essa identidade é chamada de \emph{binómio de Newton}.
+
+Para obter a expansão de \((x-a)^n\), basta substituir \(a\) por
+\(-a\):
+
+\[
+(x-a)^n
+=
+\sum_{p=0}^{n}
+\binom{n}{p}
+x^{n-p}(-a)^p.
+\]
+
+Como
+
+\[
+(-a)^p=(-1)^pa^p,
+\]
+
+temos
+
+\[
+(x-a)^n
+=
+\sum_{p=0}^{n}
+(-1)^p
+\binom{n}{p}
+x^{n-p}a^p.
+\]
+
+Os sinais alternam porque cada escolha de \(a\) corresponde, na
+realidade, à escolha de um fator \(-a\).
+
+\subsection{Por que a expansão termina?}
+
+A fórmula dos coeficientes pode ser escrita como
+
+\[
+\binom{n}{p}
+=
+\frac{
+n(n-1)(n-2)\cdots(n-p+1)
+}{p!}.
+\]
+
+Quando \(n\) é um número natural e \(p>n\), o produto do numerador
+contém o fator
+
+\[
+n-n=0.
+\]
+
+Por exemplo,
+
+\[
+\binom{3}{4}
+=
+\frac{3\cdot2\cdot1\cdot0}{4!}
+=
+0.
+\]
+
+Todos os coeficientes posteriores também são zero.
+
+Por essa razão, a expansão de
+
+\[
+(1+x)^n
+\]
+
+termina depois de um número finito de parcelas.
+
+Ela é um polinómio.
+
+\subsection{O expoente precisa ser um número natural?}
+
+As expressões
+
+\[
+(1+x)^{-1}
+\]
+
+e
+
+\[
+(1+x)^{1/2}
+\]
+
+também possuem significado.
+
+No primeiro caso,
+
+\[
+(1+x)^{-1}=\frac{1}{1+x}.
+\]
+
+No segundo,
+
+\[
+(1+x)^{1/2}=\sqrt{1+x}.
+\]
+
+Entretanto, os expoentes \(-1\) e \(1/2\) não representam uma quantidade
+natural de fatores iguais.
+
+Podemos perguntar:
+
+\begin{center}
+\emph{Seria possível conservar o padrão dos coeficientes do binómio
+quando o expoente não é um número natural?}
+\end{center}
+
+Para um número qualquer \(\alpha\), podemos experimentar a definição
+
+\[
+\binom{\alpha}{0}=1
+\]
+
+e, para \(p\geq1\),
+
+\[
+\binom{\alpha}{p}
+=
+\frac{
+\alpha(\alpha-1)(\alpha-2)\cdots(\alpha-p+1)
+}{p!}.
+\]
+
+Quando \(\alpha=n\) é um número natural, recuperamos os coeficientes já
+conhecidos.
+
+Mas, quando
+
+\[
+\alpha=-1
+\]
+
+ou
+
+\[
+\alpha=\frac12,
+\]
+
+nenhum dos fatores precisa tornar-se zero.
+
+A expansão pode, portanto, não terminar.
+
+Isso sugere a expressão
+
+\[
+(1+x)^\alpha
+\stackrel{?}{=}
+\sum_{p=0}^{\infty}
+\binom{\alpha}{p}x^p.
+\]
+
+O símbolo de interrogação indica que ainda não sabemos se essa igualdade
+é verdadeira.
+
+Antes de aceitá-la, precisamos responder a novas perguntas:
+
+\begin{itemize}
+    \item O que significa somar uma quantidade infinita de parcelas?
+    \item As somas parciais aproximam-se de algum valor determinado?
+    \item Para quais valores de \(x\) a aproximação funciona?
+    \item O erro pode tornar-se menor do que qualquer quantidade
+    previamente escolhida?
+    \item Podemos somar, multiplicar, derivar e acumular essas expansões
+    como fazemos com polinómios finitos?
+\end{itemize}
+
+Essas perguntas conduzem ao estudo das \emph{séries infinitas}.
+
+
+\end{document}
