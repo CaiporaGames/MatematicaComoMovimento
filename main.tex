@@ -3404,5 +3404,1369 @@ Antes de aceitá-la, precisamos responder a novas perguntas:
 
 Essas perguntas conduzem ao estudo das \emph{séries infinitas}.
 
+\section{Analisando coeficientes}
+
+Sabemos que para um expoente natural os coeficientes podem ser escritos:
+    \[\binom{n}{p} = \frac{n(n-1)(n-2)...(n-p+1)}{p!}\]
+
+Então em algum p=n e a expressão acabada pois:
+    \[n-n = 0\]
+
+Por isso todos os termos seguintes desaparecem. Por exemplo para n = 3:
+    \[\binom{3}{4} = \frac{3.2.1.0}{4!}\]
+
+Agora vamos testar o caso onde o n=$\frac{1}{2}$, nenhum dos fatores será zero pois sempre uma fração menos um inteiro:
+    \[\frac{1}{2}, \frac{1}{2}-1, \frac{1}{2}-2, ...\]
+
+Logo, a expansão nunca termina.
+
+\section{Primeiras Séries Produzidas}
+
+Agora que sabemos que esses números não tem fim e tambem sabemos que eles são coeficientes de um binómio, vamos testar alguns 
+desses valores e ver o que acontence, vamos usar n=-1:
+
+    \[(1+x)^{-1} = \frac{1}{(1+x)^2} = 1 - x + x^2 - x^3 + ...\]
+
+Agora vamos tomar n = $\frac{1}{2}$:
+    \[(1+x)^{1/2} = \sqrt{(1+x)} = 1 + \frac{1}{2}x - \frac{1}{8}x^2 + \frac{1}{16}x^3 - ...\]
+
+Vemos que formamos várias séries a partir de um único mecanismo. 
+Uma questão que surge é:
+    \[\text{Essas somas infinitas se aglomeram em algum número?}\]
+```latex
+\section{Somas infinitas convergentes}
+
+Na secção anterior, generalizámos os coeficientes do binómio de Newton
+para expoentes que não precisam ser números naturais.
+
+Isso produziu expressões que, ao contrário dos polinómios estudados até
+agora, não terminam depois de um número finito de parcelas.
+
+Um dos casos mais simples ocorre quando escolhemos o expoente
+
+\[
+\alpha=-1.
+\]
+
+Temos
+
+\[
+(1+x)^{-1}=\frac{1}{1+x}.
+\]
+
+Usando a regra dos coeficientes generalizados, obtemos formalmente
+
+\[
+\frac{1}{1+x}
+=
+1-x+x^2-x^3+x^4-\cdots.
+\]
+
+Entretanto, surge agora uma dificuldade que não existia para os
+polinómios.
+
+Uma soma finita como
+
+\[
+1-x+x^2-x^3
+\]
+
+pode ser calculada executando uma quantidade determinada de operações.
+
+Mas a expressão
+
+\[
+1-x+x^2-x^3+x^4-\cdots
+\]
+
+não possui uma última parcela.
+
+Precisamos, portanto, perguntar:
+
+\begin{center}
+\emph{O que significa atribuir um valor a uma soma que nunca termina?}
+\end{center}
+
+\subsection{Aproximações finitas de uma soma infinita}
+
+Em vez de tentarmos realizar todas as parcelas de uma só vez,
+consideremos apenas uma quantidade finita delas.
+
+Chamaremos de \(S_N\) a soma das parcelas desde a potência \(0\) até a
+potência \(N\).
+
+Assim,
+
+\[
+S_0=1.
+\]
+
+Para \(N=1\),
+
+\[
+S_1=1-x.
+\]
+
+Para \(N=2\),
+
+\[
+S_2=1-x+x^2.
+\]
+
+Para \(N=3\),
+
+\[
+S_3=1-x+x^2-x^3.
+\]
+
+De maneira geral,
+
+\[
+S_N
+=
+1-x+x^2-x^3+\cdots+(-x)^N.
+\]
+
+Cada \(S_N\) é uma soma perfeitamente finita.
+
+A expressão infinita será estudada observando o que acontece com essas
+aproximações quando utilizamos cada vez mais parcelas.
+
+Como \(S_N\) é uma soma geométrica de razão \(-x\), temos
+
+\[
+S_N
+=
+\frac{1-(-x)^{N+1}}{1+x}.
+\]
+
+Sabemos que desejamos aproximar
+
+\[
+\frac{1}{1+x}.
+\]
+
+Podemos então comparar o valor procurado com a aproximação \(S_N\):
+
+\[
+\frac{1}{1+x}-S_N.
+\]
+
+Substituindo a expressão encontrada para \(S_N\),
+
+\[
+\frac{1}{1+x}
+-
+\frac{1-(-x)^{N+1}}{1+x}
+=
+\frac{(-x)^{N+1}}{1+x}.
+\]
+
+Portanto,
+
+\[
+\boxed{
+\frac{1}{1+x}-S_N
+=
+\frac{(-x)^{N+1}}{1+x}
+}
+\]
+
+A diferença entre o valor que queremos representar e a soma finita que
+estamos usando será chamada de \emph{erro da aproximação}.
+
+\subsection{Podemos tornar o erro tão pequeno quanto desejarmos?}
+
+Consideremos inicialmente valores de \(x\) tais que
+
+\[
+|x|<1.
+\]
+
+Nesse caso,
+
+\[
+|x|,\quad |x|^2,\quad |x|^3,\quad |x|^4,\ldots
+\]
+
+tornam-se cada vez menores.
+
+Por exemplo, para
+
+\[
+x=\frac12,
+\]
+
+temos
+
+\[
+\frac12,\quad
+\frac14,\quad
+\frac18,\quad
+\frac1{16},\quad
+\frac1{32},\ldots
+\]
+
+Assim, aumentando suficientemente o número \(N\), podemos tornar
+
+\[
+|x|^{N+1}
+\]
+
+tão pequeno quanto desejarmos.
+
+Como o erro possui tamanho
+
+\[
+\left|
+\frac{(-x)^{N+1}}{1+x}
+\right|,
+\]
+
+também podemos torná-lo tão pequeno quanto desejarmos.
+
+Podemos formular essa ideia da seguinte maneira:
+
+\begin{center}
+\emph{Escolhida qualquer margem de erro positiva, por menor que seja,
+podemos utilizar uma quantidade suficientemente grande de parcelas para
+que o erro da aproximação fique abaixo dessa margem.}
+\end{center}
+
+Nesse caso, diremos que a soma infinita é \emph{convergente}.
+
+Assim, para
+
+\[
+|x|<1,
+\]
+
+podemos escrever
+
+\[
+\frac{1}{1+x}
+=
+1-x+x^2-x^3+x^4-\cdots.
+\]
+
+A igualdade não significa que realizámos literalmente uma quantidade
+infinita de operações.
+
+Ela significa que as somas finitas
+
+\[
+S_0,S_1,S_2,S_3,\ldots
+\]
+
+podem aproximar
+
+\[
+\frac{1}{1+x}
+\]
+
+com uma precisão tão grande quanto desejarmos.
+
+\subsection{Quando a aproximação não funciona}
+
+Se
+
+\[
+|x|>1,
+\]
+
+as potências
+
+\[
+|x|,\quad |x|^2,\quad |x|^3,\ldots
+\]
+
+não se tornam pequenas. Pelo contrário, aumentam.
+
+Assim, o erro não pode ser tornado arbitrariamente pequeno.
+
+Também precisamos examinar separadamente os casos de fronteira.
+
+Se
+
+\[
+x=1,
+\]
+
+a soma torna-se
+
+\[
+1-1+1-1+1-\cdots.
+\]
+
+As somas parciais alternam entre
+
+\[
+1
+\]
+
+e
+
+\[
+0.
+\]
+
+Elas não se aproximam de um único valor.
+
+Se
+
+\[
+x=-1,
+\]
+
+teríamos
+
+\[
+1+1+1+1+\cdots,
+\]
+
+cujas somas parciais crescem indefinidamente.
+
+Além disso,
+
+\[
+\frac{1}{1+x}
+\]
+
+não está definida em \(x=-1\).
+
+Portanto, a expansão
+
+\[
+\frac{1}{1+x}
+=
+1-x+x^2-x^3+\cdots
+\]
+
+representa a função apenas quando
+
+\[
+|x|<1.
+\]
+
+Essa descoberta mostra que uma expressão infinita exige uma nova
+preocupação que não existia para polinómios finitos:
+
+\begin{center}
+\emph{Não basta encontrar um padrão para as parcelas. Precisamos também
+saber se as aproximações realmente se aproximam de alguma quantidade.}
+\end{center}
+
+Essa necessidade conduziu à ideia de convergência.
+
+Entretanto, outra pergunta deixada pelos polinómios ainda permanece.
+
+Até agora, ao estudar as diferenças entre valores de uma função,
+considerávamos movimentos inteiros entre as entradas.
+
+Mas o que aconteceria se o movimento realizado na entrada pudesse ser
+muito menor?
+
+\section{Movimentos cada vez menores}
+
+Quando estudámos sequências, comparámos valores consecutivos.
+
+Para uma função \(f\), isso corresponde a comparar
+
+\[
+f(x)
+\]
+
+com
+
+\[
+f(x+1).
+\]
+
+O movimento realizado na entrada possui comprimento \(1\).
+
+Não existe, porém, nenhuma razão para que o movimento tenha sempre esse
+tamanho.
+
+Podemos considerar um movimento qualquer \(h\):
+
+\[
+x\longrightarrow x+h.
+\]
+
+O valor da função passa de
+
+\[
+f(x)
+\]
+
+para
+
+\[
+f(x+h).
+\]
+
+A mudança produzida na saída é, portanto,
+
+\[
+f(x+h)-f(x).
+\]
+
+Surge uma nova pergunta:
+
+\begin{center}
+\emph{O que podemos descobrir sobre uma função observando movimentos
+cada vez menores na sua entrada?}
+\end{center}
+
+\subsection{Um pequeno movimento numa potência}
+
+Consideremos
+
+\[
+f(x)=x^n.
+\]
+
+Depois de um movimento \(h\), temos
+
+\[
+f(x+h)=(x+h)^n.
+\]
+
+O binómio de Newton permite expandir essa expressão:
+
+\[
+(x+h)^n
+=
+x^n
++
+nx^{n-1}h
++
+\binom{n}{2}x^{n-2}h^2
++
+\binom{n}{3}x^{n-3}h^3
++\cdots
++h^n.
+\]
+
+A mudança total produzida pelo movimento \(h\) é
+
+\[
+(x+h)^n-x^n.
+\]
+
+Portanto,
+
+\[
+(x+h)^n-x^n
+=
+nx^{n-1}h
++
+\binom{n}{2}x^{n-2}h^2
++
+\binom{n}{3}x^{n-3}h^3
++\cdots
++h^n.
+\]
+
+Todos os termos possuem pelo menos uma ocorrência de \(h\).
+
+Podemos, então, colocar \(h\) em evidência:
+
+\[
+(x+h)^n-x^n
+=
+h
+\left(
+nx^{n-1}
++
+\binom{n}{2}x^{n-2}h
++
+\binom{n}{3}x^{n-3}h^2
++\cdots
++h^{n-1}
+\right).
+\]
+
+Dividindo a mudança da saída pelo tamanho do movimento da entrada,
+obtemos
+
+\[
+\frac{(x+h)^n-x^n}{h}
+=
+nx^{n-1}
++
+\binom{n}{2}x^{n-2}h
++
+\binom{n}{3}x^{n-3}h^2
++\cdots
++h^{n-1}.
+\]
+
+Essa quantidade mede quanto a saída mudou por unidade do movimento
+realizado na entrada.
+
+\subsection{A parte principal da variação}
+
+Observemos a expressão
+
+\[
+nx^{n-1}
++
+\binom{n}{2}x^{n-2}h
++
+\binom{n}{3}x^{n-3}h^2
++\cdots.
+\]
+
+O primeiro termo
+
+\[
+nx^{n-1}
+\]
+
+não depende de \(h\).
+
+Todos os outros dependem de
+
+\[
+h,\quad h^2,\quad h^3,\ldots
+\]
+
+Se escolhermos \(h\) muito pequeno, esses termos tornam-se
+progressivamente menores.
+
+Por exemplo, se
+
+\[
+h=\frac{1}{100},
+\]
+
+então
+
+\[
+h^2=\frac{1}{10000}
+\]
+
+e
+
+\[
+h^3=\frac{1}{1000000}.
+\]
+
+Assim, para movimentos suficientemente pequenos, a razão
+
+\[
+\frac{(x+h)^n-x^n}{h}
+\]
+
+fica cada vez mais próxima de
+
+\[
+nx^{n-1}.
+\]
+
+Podemos chamar
+
+\[
+nx^{n-1}
+\]
+
+de \emph{parte principal da variação} de \(x^n\).
+
+Geometricamente,
+
+\[
+\frac{f(x+h)-f(x)}{h}
+\]
+
+representa a inclinação da reta que passa pelos pontos
+
+\[
+(x,f(x))
+\]
+
+e
+
+\[
+(x+h,f(x+h)).
+\]
+
+Essa reta é uma secante ao gráfico da função.
+
+Quando escolhemos \(h\) cada vez menor, o segundo ponto aproxima-se do
+primeiro e a secante aproxima-se da direção que o gráfico possui naquele
+ponto.
+
+Mais adiante construiremos uma linguagem precisa para descrever esse
+processo.
+
+Por enquanto, trabalharemos com a ideia de que \(h\) pode ser escolhido
+tão pequeno quanto necessário.
+
+\subsection{Uma notação para pequenos movimentos}
+
+Podemos representar um movimento muito pequeno da entrada por
+
+\[
+dx
+\]
+
+e a mudança correspondente na saída por
+
+\[
+dy.
+\]
+
+Para
+
+\[
+y=x^n,
+\]
+
+a análise anterior sugere que, para movimentos muito pequenos,
+
+\[
+dy
+\approx
+nx^{n-1}dx.
+\]
+
+O símbolo
+
+\[
+\approx
+\]
+
+indica que estamos a descrever a parte principal da mudança.
+
+Essa relação mostra como uma potência responde a um movimento muito
+pequeno da variável.
+
+Mas isso produz uma nova pergunta.
+
+Até agora, conhecemos a função e procurámos descobrir como ela varia.
+
+Podemos tentar inverter o problema:
+
+\begin{center}
+\emph{Se conhecermos a maneira como uma quantidade varia, podemos
+reconstruir a quantidade original?}
+\end{center}
+
+Essa pergunta conduzirá novamente à ideia de acumulação.
+
+\section{Reconstruindo uma quantidade pela sua variação}
+
+Suponhamos que uma quantidade \(y\) varie aproximadamente segundo
+
+\[
+dy\approx x^n\,dx.
+\]
+
+Queremos encontrar uma expressão para \(y\).
+
+A experiência anterior com potências sugere experimentar
+
+\[
+y=\frac{x^{n+1}}{n+1}.
+\]
+
+Vamos verificar o que acontece quando \(x\) realiza um pequeno movimento
+\(h\).
+
+Temos
+
+\[
+y(x+h)
+=
+\frac{(x+h)^{n+1}}{n+1}.
+\]
+
+A mudança é
+
+\[
+y(x+h)-y(x)
+=
+\frac{(x+h)^{n+1}-x^{n+1}}{n+1}.
+\]
+
+Pelo binómio de Newton,
+
+\[
+(x+h)^{n+1}
+=
+x^{n+1}
++
+(n+1)x^nh
++
+\binom{n+1}{2}x^{n-1}h^2
++\cdots.
+\]
+
+Subtraindo \(x^{n+1}\),
+
+\[
+(x+h)^{n+1}-x^{n+1}
+=
+(n+1)x^nh
++
+\binom{n+1}{2}x^{n-1}h^2
++\cdots.
+\]
+
+Dividindo por \(n+1\),
+
+\[
+y(x+h)-y(x)
+=
+x^nh
++
+\frac{1}{n+1}
+\binom{n+1}{2}x^{n-1}h^2
++\cdots.
+\]
+
+Para um movimento muito pequeno, a parte principal é
+
+\[
+x^nh.
+\]
+
+Assim,
+
+\[
+dy\approx x^n\,dx.
+\]
+
+Encontramos, portanto, uma correspondência:
+
+\[
+\boxed{
+x^n\,dx
+\quad\longleftrightarrow\quad
+\frac{x^{n+1}}{n+1}
+}
+\]
+
+desde que
+
+\[
+n\neq -1.
+\]
+
+Essa regra permite reconstruir uma quantidade acumulada a partir de uma
+variação formada por potências.
+
+Podemos chamá-la, por enquanto, de \emph{regra de acumulação das
+potências}.
+
+\subsection{Acumulando um polinómio}
+
+Como um polinómio é uma soma finita de potências, podemos tentar acumular
+cada parcela separadamente.
+
+Considere
+
+\[
+P(x)=a_0+a_1x+a_2x^2+\cdots+a_nx^n.
+\]
+
+Usando a regra anterior, obtemos uma quantidade acumulada
+
+\[
+A(x)
+=
+a_0x
++
+a_1\frac{x^2}{2}
++
+a_2\frac{x^3}{3}
++\cdots+
+a_n\frac{x^{n+1}}{n+1}.
+\]
+
+Isso sugere que a acumulação de uma soma de movimentos pode ser obtida
+pela soma das acumulações de cada movimento.
+
+Até agora, porém, utilizámos apenas uma quantidade finita de parcelas.
+
+Na secção anterior, descobrimos uma função representada por uma soma
+infinita convergente.
+
+Podemos agora juntar as duas descobertas.
+
+\section{Acumulando uma série infinita}
+
+Encontrámos anteriormente, para
+
+\[
+|x|<1,
+\]
+
+a expansão
+
+\[
+\frac{1}{1+x}
+=
+1-x+x^2-x^3+x^4-\cdots.
+\]
+
+Antes de tentar acumular infinitas parcelas, comecemos novamente pelas
+aproximações finitas:
+
+\[
+S_N(x)
+=
+1-x+x^2-x^3+\cdots+(-1)^Nx^N.
+\]
+
+Cada \(S_N(x)\) é um polinómio.
+
+Portanto, podemos aplicar a regra de acumulação termo a termo.
+
+A acumulação de \(1\) é
+
+\[
+x.
+\]
+
+A acumulação de \(-x\) é
+
+\[
+-\frac{x^2}{2}.
+\]
+
+A acumulação de \(x^2\) é
+
+\[
+\frac{x^3}{3}.
+\]
+
+A acumulação de \(-x^3\) é
+
+\[
+-\frac{x^4}{4}.
+\]
+
+Continuando dessa maneira, obtemos
+
+\[
+A_N(x)
+=
+x-\frac{x^2}{2}
++\frac{x^3}{3}
+-\frac{x^4}{4}
++\cdots+
+(-1)^N\frac{x^{N+1}}{N+1}.
+\]
+
+À medida que usamos mais parcelas, surge uma nova expressão:
+
+\[
+x-\frac{x^2}{2}
++\frac{x^3}{3}
+-\frac{x^4}{4}
++\frac{x^5}{5}
+-\cdots.
+\]
+
+Vamos chamar temporariamente essa nova função de
+
+\[
+L(x).
+\]
+
+Assim,
+
+\[
+L(x)
+=
+x-\frac{x^2}{2}
++\frac{x^3}{3}
+-\frac{x^4}{4}
++\cdots.
+\]
+
+A maneira como construímos \(L(x)\) sugere que sua pequena variação deve
+estar relacionada com
+
+\[
+\frac{1}{1+x}.
+\]
+
+Podemos escrever informalmente
+
+\[
+dL
+\approx
+\frac{1}{1+x}\,dx.
+\]
+
+Criámos, portanto, uma nova função acumulando uma série que surgiu do
+binómio de Newton.
+
+Mas ainda não sabemos que função é essa.
+
+Isso conduz a uma nova investigação:
+
+\begin{center}
+\emph{Que propriedades possui a função \(L(x)\) que acabámos de
+construir?}
+\end{center}
+
+\section{Uma função que transforma multiplicações em somas}
+
+A relação
+
+\[
+dL
+\approx
+\frac{1}{1+x}\,dx
+\]
+
+torna-se mais simples se fizermos
+
+\[
+u=1+x.
+\]
+
+Então
+
+\[
+du=dx
+\]
+
+e podemos escrever
+
+\[
+dL
+\approx
+\frac{du}{u}.
+\]
+
+A quantidade
+
+\[
+\frac{du}{u}
+\]
+
+mede a variação de \(u\) em relação ao próprio tamanho de \(u\).
+
+Isso significa que a acumulação não depende apenas da quantidade
+adicionada, mas da proporção entre a mudança e o valor existente.
+
+Suponhamos que uma quantidade passe de \(1\) até \(a\) e depois de
+\(a\) até \(ab\).
+
+Na segunda parte do movimento, todas as quantidades foram multiplicadas
+por \(a\).
+
+Entretanto, a razão
+
+\[
+\frac{du}{u}
+\]
+
+permanece com a mesma forma quando numerador e denominador são
+multiplicados pelo mesmo fator.
+
+Isso sugere que a acumulação total entre \(1\) e \(ab\) pode ser
+separada em duas partes:
+
+\[
+L(ab)=L(a)+L(b).
+\]
+
+Essa é uma propriedade extraordinária.
+
+A função transforma produtos em somas.
+
+Já conhecemos uma função com essa característica.
+
+Ela é chamada de \emph{logaritmo}.
+
+Assim, a função construída pela série anterior pode ser identificada,
+depois de um ajuste na variável, com o logaritmo natural:
+
+\[
+\log(1+x)
+=
+x-\frac{x^2}{2}
++\frac{x^3}{3}
+-\frac{x^4}{4}
++\frac{x^5}{5}
+-\cdots,
+\]
+
+para os valores de \(x\) em que essa série converge.
+
+O logaritmo apareceu aqui não como uma definição arbitrária, mas como a
+quantidade acumulada de uma variação proporcional a
+
+\[
+\frac{1}{x}.
+\]
+
+Agora podemos fazer o problema inverso.
+
+Se o logaritmo transforma multiplicações em somas, deve existir uma
+função que transforme somas em multiplicações.
+
+\section{Uma função cujo crescimento reproduz a própria função}
+
+Procuremos uma função \(E(x)\) com a seguinte propriedade:
+
+\begin{center}
+\emph{Quando a entrada realiza um movimento muito pequeno, a mudança
+da função é proporcional ao valor que a própria função já possui.}
+\end{center}
+
+Escrevemos informalmente
+
+\[
+dE\approx E(x)\,dx.
+\]
+
+Vamos procurar \(E(x)\) na forma de uma série de potências:
+
+\[
+E(x)
+=
+a_0+a_1x+a_2x^2+a_3x^3+\cdots.
+\]
+
+Usando a regra de variação das potências, a parte principal da variação
+é
+
+\[
+dE
+\approx
+\left(
+a_1
++
+2a_2x
++
+3a_3x^2
++
+4a_4x^3
++\cdots
+\right)dx.
+\]
+
+Queremos que essa expressão seja igual, na sua parte principal, a
+
+\[
+E(x)\,dx.
+\]
+
+Portanto, precisamos que
+
+\[
+a_1=a_0,
+\]
+
+\[
+2a_2=a_1,
+\]
+
+\[
+3a_3=a_2,
+\]
+
+\[
+4a_4=a_3,
+\]
+
+e assim sucessivamente.
+
+Escolhamos
+
+\[
+a_0=1.
+\]
+
+Então
+
+\[
+a_1=1.
+\]
+
+Da relação
+
+\[
+2a_2=a_1,
+\]
+
+obtemos
+
+\[
+a_2=\frac12.
+\]
+
+Depois,
+
+\[
+3a_3=a_2,
+\]
+
+portanto,
+
+\[
+a_3=\frac{1}{2\cdot3}.
+\]
+
+Em seguida,
+
+\[
+a_4=\frac{1}{2\cdot3\cdot4}.
+\]
+
+Reconhecemos aqui novamente a operação fatorial construída anteriormente.
+
+Assim,
+
+\[
+a_n=\frac{1}{n!}.
+\]
+
+Portanto,
+
+\[
+E(x)
+=
+1+x+\frac{x^2}{2!}
++\frac{x^3}{3!}
++\frac{x^4}{4!}
++\cdots.
+\]
+
+Construímos uma função cuja variação principal possui a mesma forma que
+a própria função.
+
+Essa função será chamada de \emph{função exponencial}.
+
+Escrevemos
+
+\[
+E(x)=e^x.
+\]
+
+Assim,
+
+\[
+e^x
+=
+1+x+\frac{x^2}{2!}
++\frac{x^3}{3!}
++\frac{x^4}{4!}
++\cdots.
+\]
+
+\subsection{O surgimento do número \(e\)}
+
+Se escolhermos
+
+\[
+x=1,
+\]
+
+obtemos
+
+\[
+e
+=
+1+1+\frac{1}{2!}
++\frac{1}{3!}
++\frac{1}{4!}
++\cdots.
+\]
+
+O número \(e\) aparece, portanto, como o valor da função exponencial em
+
+\[
+x=1.
+\]
+
+Essa função foi construída procurando um crescimento cuja mudança fosse
+proporcional ao próprio tamanho.
+
+Assim, o número \(e\) está naturalmente ligado a processos de
+crescimento contínuo.
+
+\section{O binómio encontra novamente a função exponencial}
+
+Existe ainda outra maneira pela qual o binómio de Newton conduz à mesma
+função.
+
+Consideremos
+
+\[
+\left(1+\frac{x}{N}\right)^N.
+\]
+
+Pelo binómio de Newton,
+
+\[
+\left(1+\frac{x}{N}\right)^N
+=
+1
++
+\binom{N}{1}\frac{x}{N}
++
+\binom{N}{2}\frac{x^2}{N^2}
++
+\binom{N}{3}\frac{x^3}{N^3}
++\cdots.
+\]
+
+O coeficiente da parcela linear é
+
+\[
+\binom{N}{1}\frac{1}{N}
+=
+1.
+\]
+
+O coeficiente de \(x^2\) é
+
+\[
+\binom{N}{2}\frac{1}{N^2}.
+\]
+
+Como
+
+\[
+\binom{N}{2}
+=
+\frac{N(N-1)}{2},
+\]
+
+temos
+
+\[
+\binom{N}{2}\frac{1}{N^2}
+=
+\frac12
+\left(
+1-\frac1N
+\right).
+\]
+
+Quando \(N\) é escolhido muito grande, essa quantidade fica muito
+próxima de
+
+\[
+\frac12.
+\]
+
+Para a terceira potência,
+
+\[
+\binom{N}{3}\frac1{N^3}
+=
+\frac{1}{3!}
+\left(
+1-\frac1N
+\right)
+\left(
+1-\frac2N
+\right).
+\]
+
+Novamente, escolhendo \(N\) suficientemente grande, os fatores
+
+\[
+1-\frac1N
+\]
+
+e
+
+\[
+1-\frac2N
+\]
+
+ficam tão próximos de \(1\) quanto desejarmos.
+
+Assim, os primeiros termos de
+
+\[
+\left(1+\frac{x}{N}\right)^N
+\]
+
+aproximam
+
+\[
+1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\cdots.
+\]
+
+Encontramos novamente a função exponencial.
+
+Isso mostra que duas investigações diferentes conduzem ao mesmo objeto:
+
+\begin{itemize}
+    \item procurar uma função cujo crescimento seja proporcional ao
+    próprio tamanho;
+    \item repetir muitas vezes um crescimento proporcional muito
+    pequeno.
+\end{itemize}
+
+Ambas conduzem à função
+
+\[
+e^x.
+\]
+
+\section{O que ainda precisamos justificar?}
+
+Ao longo das últimas secções, usamos diversas expressões como
+
+\begin{itemize}
+    \item ``tão pequeno quanto desejarmos'';
+    \item ``suficientemente grande'';
+    \item ``aproxima cada vez melhor'';
+    \item ``parte principal da variação'';
+    \item ``acumular pequenas parcelas''.
+\end{itemize}
+
+Essas ideias permitiram descobrir relações profundas sem interromper a
+investigação com uma grande quantidade de formalismo.
+
+Entretanto, agora surge uma nova necessidade matemática.
+
+Precisamos transformar essas ideias intuitivas em afirmações precisas.
+
+Por exemplo:
+
+\begin{itemize}
+    \item O que significa exatamente uma sequência aproximar-se de um
+    número?
+    \item O que significa fazer \(h\) tornar-se arbitrariamente pequeno?
+    \item Como podemos definir com precisão a direção instantânea de um
+    gráfico?
+    \item Em que condições podemos acumular infinitas parcelas?
+    \item Quando é permitido acumular ou variar uma série termo a termo?
+\end{itemize}
+
+Essas perguntas conduzirão a novas ferramentas.
+
+A ideia de aproximação arbitrariamente precisa conduzirá ao
+\emph{limite}.
+
+A ideia da parte principal da variação conduzirá à
+\emph{derivada}.
+
+A ideia de acumular pequenas parcelas conduzirá à
+\emph{integral}.
+
+E a aproximação de áreas por uma quantidade crescente de pequenas
+regiões conduzirá a uma definição rigorosa dessas acumulações.
+
+Assim, os conceitos do cálculo não aparecerão como operações novas
+introduzidas sem motivação.
+
+Eles surgirão como ferramentas necessárias para tornar precisas ideias
+que já encontramos naturalmente durante o estudo dos polinómios,
+do binómio de Newton e das séries infinitas.
+
 
 \end{document}

@@ -1,6 +1,6 @@
-PWD c:\LatexFiles\MatematicaComoMovimento
+PWD c:\Users\darag\Documents\GitHub\MatematicaComoMovimento
 INPUT C:\Users\darag\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\LatexFiles\MatematicaComoMovimento\main.tex
+INPUT c:\Users\darag\Documents\GitHub\MatematicaComoMovimento\main.tex
 OUTPUT main.log
 INPUT C:\Users\darag\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\darag\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
