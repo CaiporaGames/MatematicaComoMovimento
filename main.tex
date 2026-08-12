@@ -1,4 +1,5 @@
-% !LW recipe = pdflatex
+% !TEX program = pdflatex
+
 
 \documentclass[12pt,a4paper]{article}
 
@@ -15,7 +16,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
-
+\usepackage[hidelinks]{hyperref}
 % Configuração das margens.
 \usepackage{geometry}
 \geometry{
@@ -36,6 +37,9 @@
 \begin{document}
 
 \maketitle
+
+\tableofcontents
+\newpage
 
 \section{Introdução}
 
@@ -194,7 +198,7 @@ da operação \(\mov\).
 Somente depois de estudarmos as propriedades dessa nova operação
 poderemos reconhecer que ela corresponde à multiplicação usual dos
 números naturais.
-\subsection{Primeiras propriedades da operação \texorpdfstring{$\mov$}{#}}
+\subsection{Primeiras propriedades da operação \texorpdfstring{$\mov$}{\#}}
 
 Até agora, observámos alguns movimentos particulares. Contudo, verificar
 uma propriedade em alguns exemplos não significa que ela seja verdadeira
@@ -879,8 +883,7 @@ Assim, também temos
 (a\rep c)\mov(b\rep c).
 \]
 
-\subsubsection{A operação \texorpdfstring{$\mov$}{#} é distributiva
-sobre \texorpdfstring{$\rep$}{@}?}
+\subsubsection{A operação \texorpdfstring{$\mov$}{\#} é distributiva sobre \texorpdfstring{$\rep$}{@}?}
 
 Para que $\mov$ fosse distributiva sobre $\rep$, precisaríamos ter
 

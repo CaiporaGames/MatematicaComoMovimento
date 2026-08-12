@@ -1,0 +1,79 @@
+\babel@toc {portuguese}{}\relax 
+\contentsline {section}{\numberline {1}Introdução}{4}{section.1}%
+\contentsline {subsection}{\numberline {1.1}A ideia fundamental}{4}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Repetição de um mesmo passo}{4}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Duas maneiras pelas quais uma operação pode surgir}{5}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Primeiras propriedades da operação $\mathbin {\#}$}{6}{subsection.1.4}%
+\contentsline {subsubsection}{\numberline {1.4.1}O número seguinte e a definição precisa de movimento}{6}{subsubsection.1.4.1}%
+\contentsline {subsubsection}{\numberline {1.4.2}Uma nova ferramenta: a indução}{7}{subsubsection.1.4.2}%
+\contentsline {subsubsection}{\numberline {1.4.3}A ordem dos movimentos importa?}{7}{subsubsection.1.4.3}%
+\contentsline {paragraph}{Primeiro resultado.}{7}{section*.2}%
+\contentsline {paragraph}{Segundo resultado.}{8}{section*.3}%
+\contentsline {subsubsection}{\numberline {1.4.4}A maneira de agrupar importa?}{9}{subsubsection.1.4.4}%
+\contentsline {paragraph}{Uma operação associativa, mas não comutativa.}{9}{section*.4}%
+\contentsline {paragraph}{Uma operação comutativa, mas não associativa.}{10}{section*.5}%
+\contentsline {subsubsection}{\numberline {1.4.5}Existe algum movimento que não altera nada?}{10}{subsubsection.1.4.5}%
+\contentsline {subsection}{\numberline {1.5}Primeiras propriedades da operação $\mathbin {@}$}{11}{subsection.1.5}%
+\contentsline {subsubsection}{\numberline {1.5.1}Qual é o elemento neutro da repetição?}{11}{subsubsection.1.5.1}%
+\contentsline {subsubsection}{\numberline {1.5.2}A repetição é comutativa?}{12}{subsubsection.1.5.2}%
+\contentsline {subsubsection}{\numberline {1.5.3}A repetição é associativa?}{12}{subsubsection.1.5.3}%
+\contentsline {subsection}{\numberline {1.6}Distribuição de movimentos}{12}{subsection.1.6}%
+\contentsline {subsubsection}{\numberline {1.6.1}A operação $\mathbin {\#}$ é distributiva sobre $\mathbin {@}$?}{13}{subsubsection.1.6.1}%
+\contentsline {subsection}{\numberline {1.7}Reconhecimento das operações}{14}{subsection.1.7}%
+\contentsline {section}{\numberline {2}O surgimento das incógnitas}{14}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Um movimento desconhecido}{14}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Como resolver uma equação?}{15}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Subtração e distância}{16}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Uma equação impossível nos naturais}{16}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Movimentos no sentido contrário}{17}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}O reconhecimento da subtração}{17}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Os números negativos foram inventados ou descobertos?}{18}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}Outras equações impossíveis}{18}{subsection.2.8}%
+\contentsline {section}{\numberline {3}Uma quantidade que pode variar}{19}{section.3}%
+\contentsline {subsection}{\numberline {3.1}De incógnita a variável}{19}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}O surgimento da função}{20}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Uma função que já utilizámos}{20}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Diferença entre incógnita e variável}{21}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Movimentos que crescem regularmente}{21}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Uma regra de crescimento}{21}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Somando os movimentos}{22}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Por que os números ímpares formam quadrados?}{23}{subsubsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.3}A soma dos primeiros números naturais}{23}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Do crescimento linear ao crescimento quadrático}{24}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Quando a variação também começa a variar}{25}{section.5}%
+\contentsline {section}{\numberline {6}Podemos somar movimentos de ordens diferentes?}{27}{section.6}%
+\contentsline {subsubsection}{\numberline {6.0.1}O que acontece se multiplicarmos cada potência por um número?}{30}{subsubsection.6.0.1}%
+\contentsline {subsubsection}{\numberline {6.0.2}Quando o movimento total se anula?}{31}{subsubsection.6.0.2}%
+\contentsline {subsubsection}{\numberline {6.0.3}Reconstruindo um polinómio a partir dos seus movimentos nulos}{31}{subsubsection.6.0.3}%
+\contentsline {subsubsection}{\numberline {6.0.4}Um movimento nulo igual a zero}{33}{subsubsection.6.0.4}%
+\contentsline {subsubsection}{\numberline {6.0.5}Quantos movimentos nulos pode haver?}{33}{subsubsection.6.0.5}%
+\contentsline {section}{\numberline {7}Movimentos que coincidem}{34}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Os coeficientes das potências repetidas}{35}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}De quantas maneiras uma parcela pode surgir?}{35}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Um novo problema de contagem}{37}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Construindo uma contagem a partir de outra}{37}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}O triângulo das escolhas}{38}{subsection.7.5}%
+\contentsline {subsection}{\numberline {7.6}Uma notação para contar escolhas}{39}{subsection.7.6}%
+\contentsline {subsection}{\numberline {7.7}Uma fórmula direta para as escolhas}{39}{subsection.7.7}%
+\contentsline {subsection}{\numberline {7.8}Uma nova operação de compressão}{40}{subsection.7.8}%
+\contentsline {section}{\numberline {8}O binómio de Newton}{41}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Por que a expansão termina?}{42}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}O expoente precisa ser um número natural?}{42}{subsection.8.2}%
+\contentsline {section}{\numberline {9}Analisando coeficientes}{43}{section.9}%
+\contentsline {section}{\numberline {10}Primeiras Séries Produzidas}{44}{section.10}%
+\contentsline {section}{\numberline {11}Somas infinitas convergentes}{44}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Aproximações finitas de uma soma infinita}{45}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Podemos tornar o erro tão pequeno quanto desejarmos?}{46}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}Quando a aproximação não funciona}{47}{subsection.11.3}%
+\contentsline {section}{\numberline {12}Movimentos cada vez menores}{48}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Um pequeno movimento numa potência}{49}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}A parte principal da variação}{49}{subsection.12.2}%
+\contentsline {subsection}{\numberline {12.3}Uma notação para pequenos movimentos}{51}{subsection.12.3}%
+\contentsline {section}{\numberline {13}Reconstruindo uma quantidade pela sua variação}{51}{section.13}%
+\contentsline {subsection}{\numberline {13.1}Acumulando um polinómio}{52}{subsection.13.1}%
+\contentsline {section}{\numberline {14}Acumulando uma série infinita}{53}{section.14}%
+\contentsline {section}{\numberline {15}Uma função que transforma multiplicações em somas}{54}{section.15}%
+\contentsline {section}{\numberline {16}Uma função cujo crescimento reproduz a própria função}{55}{section.16}%
+\contentsline {subsection}{\numberline {16.1}O surgimento do número \(e\)}{57}{subsection.16.1}%
+\contentsline {section}{\numberline {17}O binómio encontra novamente a função exponencial}{57}{section.17}%
+\contentsline {section}{\numberline {18}O que ainda precisamos justificar?}{59}{section.18}%
